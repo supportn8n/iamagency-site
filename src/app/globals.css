@@ -28,9 +28,10 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
-/* Контейнер по ширине макета (1440) — на широких экранах не растягиваем/не зумим,
-   показываем Hero ровно как на основной посадочной (Figma) */
-.site-shell { max-width: 1440px; margin-inline: auto; }
+/* Контейнер страницы — тянется на всю ширину десктопа (макет 1440 масштабируется
+   пропорционально), потолок 2560px чтобы на сверхшироких мониторах не раздувало.
+   Так пропадают боковые поля и фигуры по краям показываются как в Figma. */
+.site-shell { width: 100%; max-width: 2560px; margin-inline: auto; }
 
 html { scroll-behavior: smooth; }
 body {
@@ -38,6 +39,7 @@ body {
   background: var(--color-bg);
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* фигуры, выходящие за край, не дают горизонтальной прокрутки */
 }
 .font-display { font-family: var(--font-display); }
 ::selection { background: var(--color-accent); color: #fff; }

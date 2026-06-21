@@ -1,1 +1,0 @@
-(()=>{document.documentElement.style.scrollBehavior='auto';const i=document.querySelector('input[aria-label="Имя"]');if(!i)return 'no';window.scrollTo({top:Math.max(0,window.scrollY+i.getBoundingClientRect().top-340),behavior:'instant'});return 'ok';})()
