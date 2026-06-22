@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SocialLinks from "./blocks/SocialLinks";
+import FooterLinks from "./blocks/FooterLinks";
+import FloatFigures from "./blocks/FloatFigures";
+import Preloader from "./blocks/Preloader";
+import Header from "./blocks/Header";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://iamagency.su"),
@@ -34,7 +39,12 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <Preloader />
+        <Header />
         <div className="site-shell">{children}</div>
+        <SocialLinks />
+        <FooterLinks />
+        <FloatFigures />
       </body>
     </html>
   );

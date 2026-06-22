@@ -16,6 +16,8 @@ import { futerHtml } from "../blocks/gen/futerHtml";
 export default function MarketingPage() {
   return (
     <>
+      {/* отступ под липкий хедер, чтобы он не накрывал «НАПРАВЛЕНИЯ» */}
+      <div className="header-spacer" />
       <AppearBlock html={napravleniyaHtml} targets={["Класс"]} />
       <HoverMarkers html={keysyHtml} labels={["1", "2", "3", "4", "5"]} />
       <BuilderBlock html={processHtml} h={processH} />

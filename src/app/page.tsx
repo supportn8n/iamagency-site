@@ -2,6 +2,7 @@ import Partners from "./blocks/Partners";
 import BuilderBlock from "./blocks/BuilderBlock";
 import MarqueeBlock from "./blocks/MarqueeBlock";
 import ContactBlock from "./blocks/ContactBlock";
+import FloatChips from "./blocks/FloatChips";
 import { heroHtml } from "./blocks/gen/heroHtml";
 import { utpHtml } from "./blocks/gen/utpHtml";
 import { uslugiHtml } from "./blocks/gen/uslugiHtml";
@@ -23,17 +24,27 @@ export default function Home() {
       <BuilderBlock html={heroHtml} />
       <Partners />
       <BuilderBlock html={utpHtml} />
-      <BuilderBlock html={uslugiHtml} />
+      <div id="uslugi">
+        <BuilderBlock html={uslugiHtml} />
+      </div>
       <BuilderBlock html={tarifyHtml} />
-      <BuilderBlock html={portfolioHtml} />
+      <div id="portfolio">
+        <FloatChips html={portfolioHtml} />
+      </div>
       {/* подтягиваем вверх на 2px — закрываем зазор между половинками спирали на стыке блоков */}
       <div style={{ marginTop: "-2px" }}>
         <BuilderBlock html={marketingHtml} />
       </div>
       <MarqueeBlock html={otzyvyHtml} rowTop={275} rowHeight={475} speed={32} />
-      <BuilderBlock html={shkolaHtml} />
-      <BuilderBlock html={blogHtml} />
-      <ContactBlock html={kontaktyHtml} />
+      <div id="shkola">
+        <BuilderBlock html={shkolaHtml} />
+      </div>
+      <div id="blog">
+        <BuilderBlock html={blogHtml} />
+      </div>
+      <div id="kontakty">
+        <ContactBlock html={kontaktyHtml} />
+      </div>
       <BuilderBlock html={futerHtml} />
     </>
   );
