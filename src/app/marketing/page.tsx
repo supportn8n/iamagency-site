@@ -3,6 +3,7 @@ import SkidkaCountdown from "../blocks/SkidkaCountdown";
 import MarqueeBlock from "../blocks/MarqueeBlock";
 import AppearBlock from "../blocks/AppearBlock";
 import HoverMarkers from "../blocks/HoverMarkers";
+import DirectionLinks from "../blocks/DirectionLinks";
 import { napravleniyaHtml } from "../blocks/gen/napravleniyaHtml";
 import { keysyHtml } from "../blocks/gen/keysyHtml";
 import { processHtml, processH } from "../blocks/gen/processHtml";
@@ -19,6 +20,8 @@ export default function MarketingPage() {
       {/* отступ под липкий хедер, чтобы он не накрывал «НАПРАВЛЕНИЯ» */}
       <div className="header-spacer" />
       <AppearBlock html={napravleniyaHtml} targets={["Класс"]} />
+      {/* делает «+»/заголовки готовых направлений ссылками на их лендинги */}
+      <DirectionLinks />
       <HoverMarkers html={keysyHtml} labels={["1", "2", "3", "4", "5"]} />
       <BuilderBlock html={processHtml} h={processH} />
       <MarqueeBlock html={sozdanieHtml} rowTop={11} rowHeight={174} />
