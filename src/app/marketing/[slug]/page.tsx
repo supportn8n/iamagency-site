@@ -124,6 +124,41 @@ export default async function DirectionPage({
           </section>
         )}
 
+        {/* Партнёр-подрядчик (Tantal / Villo) */}
+        {d.partner && (
+          <div
+            style={{
+              border: "1px solid #e6e6e6",
+              borderRadius: 18,
+              padding: "clamp(20px,3vw,32px)",
+              marginBottom: 32,
+              maxWidth: 820,
+              background: "#fafafa",
+            }}
+          >
+            <p style={{ fontSize: "clamp(16px,1.8vw,19px)", lineHeight: 1.55, color: "#333", margin: "0 0 16px" }}>
+              {d.partner.note}
+            </p>
+            <a
+              href={d.partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                color: "#fff",
+                background: "#F55D1C",
+                textDecoration: "none",
+                fontWeight: 600,
+                padding: "11px 26px",
+                borderRadius: 999,
+                fontSize: 16,
+              }}
+            >
+              {d.partner.label} →
+            </a>
+          </div>
+        )}
+
         {/* CTA — «поможем с …» */}
         <div
           style={{

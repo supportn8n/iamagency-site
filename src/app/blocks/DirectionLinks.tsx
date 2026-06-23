@@ -44,6 +44,9 @@ export default function DirectionLinks() {
         );
         if (!title) return;
         const tr = title.getBoundingClientRect();
+        const canvas = title.parentElement; // холст (захватываем ДО оборачивания)
+        const tl = parseFloat(title.style.left || "0");
+        const tt = parseFloat(title.style.top || "0");
         wrap(title, href);
         // «+» на той же строке справа от заголовка → тоже кликабельный
         const plus = divs.find((el) => {
@@ -52,6 +55,18 @@ export default function DirectionLinks() {
           return Math.abs(r.top - tr.top) < 60 && r.left > tr.left && r.left - tr.left < 420;
         });
         wrap(plus, href);
+
+        // ВСЯ карточка кликабельна: оверлей по координатам заголовка
+        // (карточка ~324×81, заголовок смещён внутрь на ~19px)
+        if (tl && tt && canvas) {
+          const a = document.createElement("a");
+          a.href = href;
+          a.setAttribute("aria-label", d.name);
+          a.style.cssText =
+            "position:absolute;cursor:pointer;z-index:60;border-radius:39px;left:" +
+            (tl - 19) + "px;top:" + (tt - 19) + "px;width:324px;height:81px";
+          canvas.appendChild(a);
+        }
       });
     };
 
