@@ -1,9 +1,11 @@
 import BuilderBlock from "../blocks/BuilderBlock";
+import HeroBlock from "../blocks/HeroBlock";
 import SkidkaCountdown from "../blocks/SkidkaCountdown";
 import MarqueeBlock from "../blocks/MarqueeBlock";
 import AppearBlock from "../blocks/AppearBlock";
 import HoverMarkers from "../blocks/HoverMarkers";
 import DirectionLinks from "../blocks/DirectionLinks";
+import { marketingHeroLeftHtml, marketingHeroRightHtml } from "../blocks/gen/marketingHeroHtml";
 import { napravleniyaHtml } from "../blocks/gen/napravleniyaHtml";
 import { keysyHtml } from "../blocks/gen/keysyHtml";
 import { processHtml, processH } from "../blocks/gen/processHtml";
@@ -17,8 +19,10 @@ import { futerHtml } from "../blocks/gen/futerHtml";
 export default function MarketingPage() {
   return (
     <>
-      {/* отступ под липкий хедер, чтобы он не накрывал «НАПРАВЛЕНИЯ» */}
+      {/* отступ под липкий хедер */}
       <div className="header-spacer" />
+      {/* Hero «Маркетинг» — резиновый, на всю ширину, вписан в первый экран */}
+      <HeroBlock leftHtml={marketingHeroLeftHtml} rightHtml={marketingHeroRightHtml} />
       <AppearBlock html={napravleniyaHtml} targets={["Класс"]} />
       {/* делает «+»/заголовки готовых направлений ссылками на их лендинги */}
       <DirectionLinks />
