@@ -2,12 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/* Hero «Маркетинг» — единый холст 1440×1024. Масштабируется так, чтобы целиком
-   вписаться в первый экран (высота = 100vh − хедер): берём меньший из масштабов
-   по ширине и по высоте, поэтому вся композиция (от «МАРКЕТИНГ» до кнопки
-   «Консультация») всегда помещается без прокрутки. Холст центрируется по
-   горизонтали. Правая группа (карточка «Как мы работаем») вписана в тот же холст
-   со сдвигом вправо (left: 780 = 1440 − 660). */
+/* Hero «Маркетинг» — единый холст 1440×1024 в натуральных пропорциях, как в
+   Figma-эталоне. Масштабируется под ширину контейнера (scale = ширина/1440),
+   поэтому заголовок «МАРКЕТИНГ» всегда во всю строку, а вся композиция один в
+   один повторяет макет. Правая группа (карточка «Как мы работаем») вписана в
+   тот же холст со сдвигом вправо (left: 780 = 1440 − 660). */
 const W = 1440;
 const H = 1024;
 
@@ -24,8 +23,7 @@ export default function HeroBlock({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    // вписываем холст целиком: что меньше — ширина или высота
-    const update = () => setScale(Math.min(el.clientWidth / W, el.clientHeight / H));
+    const update = () => setScale(el.clientWidth / W);
     update();
     const ro = new ResizeObserver(update);
     ro.observe(el);
@@ -40,11 +38,7 @@ export default function HeroBlock({
     <div
       ref={ref}
       className="relative w-full"
-      style={{
-        height: "calc(100vh - var(--header-h))",
-        overflow: "hidden",
-        background: "#fff",
-      }}
+      style={{ aspectRatio: `${W} / ${H}`, overflow: "hidden", background: "#fff" }}
     >
       <div
         style={{
