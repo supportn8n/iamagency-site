@@ -27,8 +27,9 @@ export default function MarketingPage() {
       <AppearBlock html={napravleniyaHtml} targets={["Класс"]} />
       {/* делает «+»/заголовки готовых направлений ссылками на их лендинги */}
       <DirectionLinks />
+      {/* Кейсы без Reveal: blur-фильтр обрезал бы выходящие за блок фигуры (гора, кольца) */}
+      <HoverMarkers html={keysyHtml} labels={["1", "2", "3", "4", "5"]} />
       {/* секции ниже плавно появляются из размытия при входе в экран на 30% */}
-      <Reveal><HoverMarkers html={keysyHtml} labels={["1", "2", "3", "4", "5"]} /></Reveal>
       <Reveal><BuilderBlock html={processHtml} h={processH} /></Reveal>
       <Reveal><MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} /></Reveal>
       <Reveal><BuilderBlock html={qaHtml} /></Reveal>
