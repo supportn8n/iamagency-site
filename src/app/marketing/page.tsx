@@ -9,6 +9,7 @@ import Reveal from "../blocks/Reveal";
 import { marketingHeroLeftHtml, marketingHeroRightHtml } from "../blocks/gen/marketingHeroHtml";
 import { napravleniyaHtml } from "../blocks/gen/napravleniyaHtml";
 import { keysyHtml } from "../blocks/gen/keysyHtml";
+import { memeHtml, memeH } from "../blocks/gen/memeHtml";
 import { processHtml, processH } from "../blocks/gen/processHtml";
 import { sozdanieHtml } from "../blocks/gen/sozdanieHtml";
 import { qaHtml } from "../blocks/gen/qaHtml";
@@ -29,6 +30,8 @@ export default function MarketingPage() {
       <DirectionLinks />
       {/* Кейсы без Reveal: blur-фильтр обрезал бы выходящие за блок фигуры (гора, кольца) */}
       <HoverMarkers html={keysyHtml} labels={["1", "2", "3", "4", "5"]} />
+      {/* мем-блок «наведи мышкой»: прическа↔агентство + облачко I AM AGENCY (CSS hover) */}
+      <BuilderBlock html={memeHtml} h={memeH} />
       {/* секции ниже плавно появляются из размытия при входе в экран на 30% */}
       <Reveal><BuilderBlock html={processHtml} h={processH} /></Reveal>
       <Reveal><MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} /></Reveal>
