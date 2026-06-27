@@ -55,10 +55,13 @@ export default function HoverMarkers({
         (digits[0].offsetParent as HTMLElement);
       if (!canvas) return;
 
-      // альпинист
-      const climber = ([...canvas.querySelectorAll("div")] as HTMLElement[]).find((e) =>
-        (e.textContent || "").includes("🧗")
-      );
+      // альпинист (теперь картинка из Figma)
+      const climber =
+        (canvas.querySelector('.climber, [layer-name="🧗🏻"]') as HTMLElement) ||
+        ([...canvas.querySelectorAll("div")] as HTMLElement[]).find((e) =>
+          (e.textContent || "").includes("🧗")
+        ) ||
+        null;
       const climberBase = climber ? { x: 640, y: 658 } : null; // центр бокса альпиниста
       if (climber) {
         climber.style.transition = "transform .45s cubic-bezier(.4,.8,.3,1)";
