@@ -32,8 +32,9 @@ export default function MarketingPage() {
       <HoverMarkers html={keysyHtml} labels={["1", "2", "3", "4", "5"]} />
       {/* мем-блок «наведи мышкой»: прическа↔агентство + облачко I AM AGENCY (CSS hover) */}
       <BuilderBlock html={memeHtml} h={memeH} />
+      {/* Процесс без Reveal: blur резал бы жгут на стыке с мем-блоком (одна фигура на два блока) */}
+      <BuilderBlock html={processHtml} h={processH} />
       {/* секции ниже плавно появляются из размытия при входе в экран на 30% */}
-      <Reveal><BuilderBlock html={processHtml} h={processH} /></Reveal>
       <Reveal><MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} /></Reveal>
       <Reveal><BuilderBlock html={qaHtml} /></Reveal>
       <Reveal><SkidkaCountdown html={skidkaHtml} h={skidkaH} /></Reveal>
