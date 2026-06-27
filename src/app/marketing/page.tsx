@@ -5,6 +5,7 @@ import MarqueeBlock from "../blocks/MarqueeBlock";
 import AppearBlock from "../blocks/AppearBlock";
 import HoverMarkers from "../blocks/HoverMarkers";
 import DirectionLinks from "../blocks/DirectionLinks";
+import Reveal from "../blocks/Reveal";
 import { marketingHeroLeftHtml, marketingHeroRightHtml } from "../blocks/gen/marketingHeroHtml";
 import { napravleniyaHtml } from "../blocks/gen/napravleniyaHtml";
 import { keysyHtml } from "../blocks/gen/keysyHtml";
@@ -26,12 +27,13 @@ export default function MarketingPage() {
       <AppearBlock html={napravleniyaHtml} targets={["Класс"]} />
       {/* делает «+»/заголовки готовых направлений ссылками на их лендинги */}
       <DirectionLinks />
-      <HoverMarkers html={keysyHtml} labels={["1", "2", "3", "4", "5"]} />
-      <BuilderBlock html={processHtml} h={processH} />
-      <MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} />
-      <BuilderBlock html={qaHtml} />
-      <SkidkaCountdown html={skidkaHtml} h={skidkaH} />
-      <BuilderBlock html={futerHtml} />
+      {/* секции ниже плавно появляются из размытия при входе в экран на 30% */}
+      <Reveal><HoverMarkers html={keysyHtml} labels={["1", "2", "3", "4", "5"]} /></Reveal>
+      <Reveal><BuilderBlock html={processHtml} h={processH} /></Reveal>
+      <Reveal><MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} /></Reveal>
+      <Reveal><BuilderBlock html={qaHtml} /></Reveal>
+      <Reveal><SkidkaCountdown html={skidkaHtml} h={skidkaH} /></Reveal>
+      <Reveal><BuilderBlock html={futerHtml} /></Reveal>
     </>
   );
 }
