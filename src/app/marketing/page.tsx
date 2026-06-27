@@ -28,7 +28,7 @@ export default function MarketingPage() {
       <DirectionLinks />
       <HoverMarkers html={keysyHtml} labels={["1", "2", "3", "4", "5"]} />
       <BuilderBlock html={processHtml} h={processH} />
-      <MarqueeBlock html={sozdanieHtml} rowTop={11} rowHeight={174} />
+      <MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} />
       <BuilderBlock html={qaHtml} />
       <SkidkaCountdown html={skidkaHtml} h={skidkaH} />
       <BuilderBlock html={futerHtml} />
