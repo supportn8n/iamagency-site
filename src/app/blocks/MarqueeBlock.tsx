@@ -6,19 +6,26 @@ import BuilderBlock from "./BuilderBlock";
 /* Бесконечная лента поверх статичного Builder.io-HTML.
    Находит карточки ряда по сигнатуре (top/height), переносит их в «трек»,
    клонирует на ширину периода и крутит через Web Animations API.
-   Абсолютные координаты Figma сохраняются; уезжающие клоны клипает overflow холста. */
+   Если заданы clipLeft/clipWidth — лента подрезается ровно по этой области
+   (по панели), чтобы карточки не вылезали за край и аккуратно исчезали. */
 export default function MarqueeBlock({
   html,
   h,
   rowTop,
   rowHeight,
   speed = 45,
+  clipLeft,
+  clipWidth,
+  clipRadius = 24,
 }: {
   html: string;
   h?: number;
   rowTop: number;
   rowHeight: number;
   speed?: number; // px/сек
+  clipLeft?: number;
+  clipWidth?: number;
+  clipRadius?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -27,8 +34,6 @@ export default function MarqueeBlock({
     if (!root) return;
 
     const t = setTimeout(() => {
-      // карточки ряда лежат во вложенной обёртке — ищем по сигнатуре глубоко,
-      // контейнером трека берём их общего родителя
       const match = (c: HTMLElement) => {
         const s = c.getAttribute("style") || "";
         return s.includes(`top:${rowTop}px`) && s.includes(`height:${rowHeight}px`);
@@ -49,10 +54,30 @@ export default function MarqueeBlock({
       const gap = 32;
       const period = maxRight - minLeft + gap;
 
+      const clip = clipLeft != null && clipWidth != null;
+      const offX = clip ? clipLeft! : 0;
+      const offY = clip ? rowTop : 0;
+
+      // контейнер-обрезка по панели (если задан) — иначе трек прямо на холсте
+      let host: HTMLElement = canvas;
+      if (clip) {
+        const box = document.createElement("div");
+        box.style.cssText =
+          `position:absolute;left:${clipLeft}px;top:${rowTop}px;width:${clipWidth}px;` +
+          `height:${rowHeight}px;overflow:hidden;border-radius:${clipRadius}px`;
+        canvas.appendChild(box);
+        host = box;
+      }
+
       const track = document.createElement("div");
       track.style.cssText = "position:absolute;left:0;top:0;width:0;height:0";
-      canvas.appendChild(track);
-      for (const c of cards) track.appendChild(c); // переносим оригиналы
+      host.appendChild(track);
+      for (const c of cards) {
+        // координаты делаем относительными к контейнеру-обрезке
+        c.style.left = parseFloat(c.style.left || "0") - offX + "px";
+        c.style.top = parseFloat(c.style.top || "0") - offY + "px";
+        track.appendChild(c);
+      }
       for (const c of cards) {
         const clone = c.cloneNode(true) as HTMLElement;
         clone.style.left = parseFloat(c.style.left || "0") + period + "px";
@@ -69,7 +94,7 @@ export default function MarqueeBlock({
     }, 120);
 
     return () => clearTimeout(t);
-  }, [rowTop, rowHeight, speed]);
+  }, [rowTop, rowHeight, speed, clipLeft, clipWidth, clipRadius]);
 
   return (
     <div ref={ref}>

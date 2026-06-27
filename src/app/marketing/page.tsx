@@ -12,7 +12,7 @@ import { keysyHtml } from "../blocks/gen/keysyHtml";
 import { memeHtml, memeH } from "../blocks/gen/memeHtml";
 import { processHtml, processH } from "../blocks/gen/processHtml";
 import { sozdanieHtml } from "../blocks/gen/sozdanieHtml";
-import { qaHtml } from "../blocks/gen/qaHtml";
+import { qaHtml, qaH } from "../blocks/gen/qaHtml";
 import { skidkaHtml, skidkaH } from "../blocks/gen/skidkaHtml";
 import { futerHtml } from "../blocks/gen/futerHtml";
 
@@ -35,8 +35,9 @@ export default function MarketingPage() {
       {/* Процесс без Reveal: blur резал бы жгут на стыке с мем-блоком (одна фигура на два блока) */}
       <BuilderBlock html={processHtml} h={processH} />
       {/* секции ниже плавно появляются из размытия при входе в экран на 30% */}
-      <Reveal><MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} /></Reveal>
-      <Reveal><BuilderBlock html={qaHtml} /></Reveal>
+      <Reveal><MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} clipLeft={75} clipWidth={1290} /></Reveal>
+      {/* Q&A без Reveal: фигуры (слиток, airship) выходят за блок, blur бы их резал */}
+      <BuilderBlock html={qaHtml} h={qaH} />
       <Reveal><SkidkaCountdown html={skidkaHtml} h={skidkaH} /></Reveal>
       <Reveal><BuilderBlock html={futerHtml} /></Reveal>
     </>
