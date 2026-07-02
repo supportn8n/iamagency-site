@@ -75,3 +75,15 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
 }
+
+/* Override for large emoji used in the marketing block to improve cross-browser rendering */
+[layer-name="🤵🏼‍♂️"] span,
+div[layer-name="🤵🏼‍♂️"] span {
+  font-size: 72px !important;
+  line-height: 72px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  width: 80px !important;
+  height: 80px !important;
+}
+

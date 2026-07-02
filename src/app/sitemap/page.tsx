@@ -14,6 +14,7 @@ const TREE: { title: string; href: string; children?: { title: string; href: str
     href: "/",
     children: [
       { title: "Услуги", href: "/#uslugi" },
+      { title: "Брендбук и SMM-стратегия", href: "/uslugi/brendbuk-i-smm-strategiya" },
       { title: "Портфолио", href: "/#portfolio" },
       { title: "Школа SMM", href: "/#shkola" },
       { title: "Блог", href: "/#blog" },
