@@ -3,22 +3,22 @@
 import { useEffect, useRef } from "react";
 import BuilderBlock from "./BuilderBlock";
 
-/* «Парящие» чипы-ниши в блоке кейсов (вдохновлено seo-lebedev.ru).
-   Находит таблетки-ниши (внешний div высотой 80px с чёрной таблеткой внутри)
-   и запускает каждой бесконечное лёгкое «парение» — небольшой сдвиг + поворот,
-   у каждой свои параметры и сдвиг старта, поэтому двигаются вразнобой.
-   Координаты Figma не трогаем — только transform.
-   Через links чипы становятся кликабельными: "#beauty" — плавный скролл
-   на этой же странице, "/keisy#beauty" — переход на страницу кейсов. */
+/* Плашки-ниши в блоке кейсов.
+   mode="float" (по умолчанию, главная) — лёгкое бесконечное «парение», у каждой
+     свои параметры, двигаются вразнобой.
+   mode="flee" (хаб /keisy) — плашки «убегают» от курсора: чем ближе мышь, тем
+     сильнее плашка сдвигается прочь; отодвинулся — плавно возвращается.
+   Через links плашки кликабельны: подстрока названия ниши → href. */
 export default function FloatChips({
   html,
   h,
   links,
+  mode = "float",
 }: {
   html: string;
   h?: number;
-  /* карта: подстрока названия ниши (в нижнем регистре) → href */
   links?: Record<string, string>;
+  mode?: "float" | "flee";
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -43,8 +43,30 @@ export default function FloatChips({
         .filter((el): el is HTMLElement => !!el);
       if (!chips.length) return;
 
-      chips.forEach((chip, i) => {
-        if (!reduced) {
+      // кликабельность (одинаково для обоих режимов)
+      if (links) {
+        chips.forEach((chip) => {
+          const name = (chip.textContent || "").toLowerCase();
+          const key = Object.keys(links).find((k) => name.includes(k));
+          if (!key) return;
+          const href = links[key];
+          chip.style.cursor = "pointer";
+          chip.addEventListener("click", () => {
+            if (href.startsWith("#")) {
+              document
+                .getElementById(href.slice(1))
+                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+            } else {
+              window.location.href = href;
+            }
+          });
+        });
+      }
+
+      if (reduced) return;
+
+      if (mode === "float") {
+        chips.forEach((chip, i) => {
           const dx = 5 + (i % 3) * 2; // 5..9px
           const dy = 6 + (i % 4) * 2; // 6..12px
           const rot = 1 + (i % 3) * 0.5; // 1..2deg
@@ -60,34 +82,64 @@ export default function FloatChips({
             { duration: dur, iterations: Infinity, easing: "ease-in-out" }
           );
           a.currentTime = i * 700; // десинхрон старта
-        }
+        });
+        return;
+      }
 
-        // кликабельность чипов: ищем нишу по тексту внутри обёртки
-        if (links) {
-          const name = (chip.textContent || "").toLowerCase();
-          const key = Object.keys(links).find((k) => name.includes(k));
-          if (!key) return;
-          const href = links[key];
-          chip.style.cursor = "pointer";
-          chip.addEventListener("click", () => {
-            if (href.startsWith("#")) {
-              document
-                .getElementById(href.slice(1))
-                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      // mode === "flee": плашки отодвигаются от курсора
+      const RADIUS = 190; // зона реакции вокруг курсора, px (в координатах экрана)
+      const STRENGTH = 0.55; // насколько сильно убегают
+      chips.forEach((chip) => {
+        chip.style.willChange = "transform";
+        chip.style.transition = "transform 0.35s cubic-bezier(.22,1,.36,1)";
+      });
+
+      let raf = 0;
+      const onMove = (e: MouseEvent) => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          chips.forEach((chip) => {
+            const r = chip.getBoundingClientRect();
+            const cx = r.left + r.width / 2;
+            const cy = r.top + r.height / 2;
+            const dx = cx - e.clientX;
+            const dy = cy - e.clientY;
+            const dist = Math.hypot(dx, dy);
+            if (dist < RADIUS && dist > 0.001) {
+              const push = (RADIUS - dist) * STRENGTH;
+              const ux = (dx / dist) * push;
+              const uy = (dy / dist) * push;
+              chip.style.transform = `translate(${ux}px,${uy}px)`;
             } else {
-              window.location.href = href;
+              chip.style.transform = "translate(0,0)";
             }
           });
-        }
-      });
+        });
+      };
+      const onLeave = () => {
+        chips.forEach((chip) => (chip.style.transform = "translate(0,0)"));
+      };
+      root.addEventListener("mousemove", onMove);
+      root.addEventListener("mouseleave", onLeave);
+      // сохраняем очистку на элементе
+      (root as HTMLElement & { _fleeCleanup?: () => void })._fleeCleanup = () => {
+        root.removeEventListener("mousemove", onMove);
+        root.removeEventListener("mouseleave", onLeave);
+        if (raf) cancelAnimationFrame(raf);
+      };
     }, 150);
 
-    return () => clearTimeout(t);
-  }, [links]);
+    return () => {
+      clearTimeout(t);
+      const r = ref.current as (HTMLElement & { _fleeCleanup?: () => void }) | null;
+      r?._fleeCleanup?.();
+    };
+  }, [links, mode]);
 
   return (
     <div ref={ref}>
-      <BuilderBlock html={html} h={h} />
+      <BuilderBlock html={html} h={h} overflow={mode === "flee" ? "visible" : "hidden"} />
     </div>
   );
 }

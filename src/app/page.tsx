@@ -14,7 +14,7 @@ import { shkolaHtml } from "./blocks/gen/shkolaHtml";
 import { blogHtml } from "./blocks/gen/blogHtml";
 import { kontaktyHtml } from "./blocks/gen/kontaktyHtml";
 import { futerHtml } from "./blocks/gen/futerHtml";
-import { linksFromHome } from "./keisy/links";
+import { caseLinks } from "./case/cases";
 
 /* Главная 1:1 из экспортов Builder.io. Между Hero и УТП — лента Партнёров.
    Блок «Маркетинг» — тизер: по кнопке «Узнать больше» ведёт на /marketing
@@ -32,7 +32,7 @@ export default function Home() {
         <BuilderBlock html={tarifyHtml} />
       </div>
       <div id="portfolio">
-        <FloatChips html={portfolioHtml} links={linksFromHome} />
+        <FloatChips html={portfolioHtml} links={caseLinks} />
       </div>
       {/* подтягиваем вверх на 2px — закрываем зазор между половинками спирали на стыке блоков */}
       <div style={{ marginTop: "-2px" }}>
