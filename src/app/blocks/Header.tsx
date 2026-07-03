@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from "react";
    один-в-один с верхним меню. На главной вверху прячется (родное меню видно). */
 const LINKS = [
   { label: "УСЛУГИ", href: "/#uslugi", left: 313 },
-  { label: "ПОРТФОЛИО", href: "/#portfolio", left: 483 },
+  { label: "ПОРТФОЛИО", href: "/keisy", left: 483 },
   { label: "МАРКЕТИНГ", href: "/marketing", left: 698 },
   { label: "ШКОЛА SMM", href: "/#shkola", left: 905 },
   { label: "БЛОГ", href: "/#blog", left: 1121 },

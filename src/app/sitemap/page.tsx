@@ -24,6 +24,7 @@ const TREE: { title: string; href: string; children?: { title: string; href: str
       { title: "Контакты", href: "/#kontakty" },
     ],
   },
+  { title: "Кейсы", href: "/keisy" },
   { title: "Маркетинг", href: "/marketing" },
   { title: "Политика конфиденциальности", href: "/privacy-policy" },
 ];
