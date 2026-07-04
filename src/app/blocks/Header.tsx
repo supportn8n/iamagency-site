@@ -12,7 +12,7 @@ const LINKS = [
   { label: "УСЛУГИ", href: "/#uslugi", left: 313 },
   { label: "ПОРТФОЛИО", href: "/keisy", left: 483 },
   { label: "МАРКЕТИНГ", href: "/marketing", left: 698 },
-  { label: "ШКОЛА SMM", href: "/#shkola", left: 905 },
+  { label: "ШКОЛА SMM", href: "/shkola-smm", left: 905 },
   { label: "БЛОГ", href: "/#blog", left: 1121 },
   { label: "КОНТАКТЫ", href: "/#kontakty", left: 1252 },
 ];

@@ -19,7 +19,7 @@ const TREE: { title: string; href: string; children?: { title: string; href: str
       { title: "Маркетинг и продвижение", href: "/uslugi/marketing-i-prodvizhenie" },
       { title: "Контент / Съёмки", href: "/uslugi/kontent-syomki" },
       { title: "Портфолио / Кейсы", href: "/keisy" },
-      { title: "Школа SMM", href: "/#shkola" },
+      { title: "Школа SMM", href: "/shkola-smm" },
       { title: "Блог", href: "/#blog" },
       { title: "Контакты", href: "/#kontakty" },
     ],
