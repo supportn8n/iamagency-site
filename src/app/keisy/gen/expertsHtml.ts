@@ -58,11 +58,7 @@ export const expertsHtml = `
 <div style="position:relative;width:1440px;height:989px;background:#FFFFFF;overflow:hidden;">
 
   <!-- хлебные крошки -->
-  <div style="position:absolute;left:65px;top:30px;width:330px;height:21px;">
-    <a href="/" style="position:absolute;left:0;top:1px;${crumb}color:${GRAY}">Главная</a>
-    <span style="position:absolute;left:115px;top:0;${crumb}color:${GRAY}">→</span>
-    <span style="position:absolute;left:148px;top:1px;display:inline-flex;gap:9px;align-items:baseline;white-space:nowrap;"><a href="/keisy" style="${crumb}color:${DARK}text-decoration:none;">Кейсы</a><span style="${crumb}color:${DARK}">→</span><span style="${crumb}color:${DARK}">Experts</span></span>
-  </div>
+  <div style="position:absolute;left:65px;top:30px;display:flex;gap:13px;align-items:baseline;white-space:nowrap;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:1;letter-spacing:-0.05em;text-transform:uppercase;"><a href="/" style="color:#9A9895;text-decoration:none;">Главная</a><span style="color:#9A9895;">→</span><a href="/keisy" style="color:#9A9895;text-decoration:none;">Кейсы</a><span style="color:#9A9895;">→</span><span style="color:#1C1C1C;">Experts</span></div>
 
   <!-- ================= карточка кейса ================= -->
   <div style="position:absolute;left:65px;top:188px;width:1306px;height:683.78px;">

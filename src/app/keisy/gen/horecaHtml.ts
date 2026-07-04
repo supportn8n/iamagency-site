@@ -7,10 +7,7 @@
 export const horecaHtml = `
 <div style="position:relative;width:1440px;height:1813px;background:#FFFFFF;overflow:hidden;">
 
-  <div style="position:absolute;left:65px;top:30px;width:325px;height:21px;">
-    <a href="/" style="position:absolute;left:0px;top:1px;width:105px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#9A9895;white-space:pre-line;margin:0;text-decoration:none;">Главная</a>
-    <span style="position:absolute;left:148px;top:1px;display:inline-flex;gap:9px;align-items:baseline;white-space:nowrap;"><a href="/keisy" style="width:177px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#9A9895;white-space:pre-line;margin:0;text-decoration:none;text-decoration:none;">Кейсы</a><span style="width:177px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#9A9895;white-space:pre-line;margin:0;text-decoration:none;">→</span><span style="width:177px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#1C1C1C;white-space:pre-line;margin:0;text-decoration:none;">HoReCa</span></span>
-    <div style="position:absolute;left:115px;top:0px;width:23px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#9A9895;white-space:pre-line;margin:0;">→</div>
+  <div style="position:absolute;left:65px;top:30px;display:flex;gap:13px;align-items:baseline;white-space:nowrap;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:1;letter-spacing:-0.05em;text-transform:uppercase;"><a href="/" style="color:#9A9895;text-decoration:none;">Главная</a><span style="color:#9A9895;">→</span><a href="/keisy" style="color:#9A9895;text-decoration:none;">Кейсы</a><span style="color:#9A9895;">→</span><span style="color:#1C1C1C;">HoReCa</span></div>
   </div>
   <div style="position:absolute;left:65px;top:128px;width:388px;height:68px;">
     <div style="position:absolute;left:0px;top:0px;width:388px;height:68px;border-radius:84.17px;background:#1C1C1C;"></div>
