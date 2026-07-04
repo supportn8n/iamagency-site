@@ -1,3 +1,4 @@
+import IMGMAP from "./_imageMap.json";
 /* Страница «Кейсы», раздел BEAUTY — 1:1 из Figma IAM-WEB,
    фрейм «BEAUTY» #12339:1313 (1440×2735, белый фон #FFFFFF).
    Тексты дословно из макета. Фото недоступны (Figma API 429) —
@@ -32,8 +33,11 @@ const ph = (
   r: string,
   node: string,
   ref?: string,
-) =>
-  `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};border-radius:${r}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+) => {
+  const _f = (IMGMAP as Record<string, string>)[node + "|" + (ref || "")];
+  if (_f) return `<img src="/blk/keisy/${_f}" alt="" loading="lazy" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${r ? `border-radius:${r};` : ""}object-fit:cover;" />`;
+  return `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};${r ? `border-radius:${r};` : ""}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+};
 
 /* Белая карточка с чёрной обводкой (RECTANGLE "image" без фото-заливки) */
 const card = (x: number, y: number, w: number, h: number, r: number) =>
@@ -73,7 +77,7 @@ export const beautyHtml = `
   <div style="position:absolute;left:65px;top:30px;width:321px;height:21px;">
     <a href="/" style="position:absolute;left:0;top:1px;${crumb}color:${GRAY}">Главная</a>
     <span style="position:absolute;left:115px;top:0;${crumb}color:${GRAY}">→</span>
-    <a href="/keisy" style="position:absolute;left:148px;top:1px;${crumb}color:#1C1C1C;white-space:nowrap;">кейсы BEAUTY</a>
+    <span style="position:absolute;left:148px;top:1px;display:inline-flex;gap:9px;align-items:baseline;white-space:nowrap;"><a href="/keisy" style="${crumb}color:#9A9895;white-space:nowrap;text-decoration:none;">Кейсы</a><span style="${crumb}color:#9A9895;white-space:nowrap;">→</span><span style="${crumb}color:#1C1C1C;white-space:nowrap;">BEAUTY</span></span>
   </div>
 
   <!-- плашка «Кейс Jadu» -->

@@ -1,3 +1,4 @@
+import IMGMAP from "./_imageMap.json";
 /* Раздел «Кейсы / Tourism» — 1:1 из Figma IAM-WEB,
    фрейм «Tourism» #12354:3349 (1440×1813, белый фон).
    Тексты дословно из макета. Фото недоступны (Figma API 429) —
@@ -45,8 +46,11 @@ const ph = (
   r: string,
   node: string,
   ref?: string,
-) =>
-  `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};${r ? `border-radius:${r};` : ""}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+) => {
+  const _f = (IMGMAP as Record<string, string>)[node + "|" + (ref || "")];
+  if (_f) return `<img src="/blk/keisy/${_f}" alt="" loading="lazy" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${r ? `border-radius:${r};` : ""}object-fit:cover;" />`;
+  return `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};${r ? `border-radius:${r};` : ""}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+};
 
 /* Белая карточка с чёрной обводкой */
 const card = (x: number, y: number, w: number, h: number, r: number) =>
@@ -75,7 +79,7 @@ export const tourismHtml = `
   <div style="position:absolute;left:65px;top:30px;width:333px;height:21px;">
     <a href="/" style="position:absolute;left:0;top:1px;${crumb}color:${GRAY}">Главная</a>
     <span style="position:absolute;left:115px;top:0;${crumb}color:${GRAY}">→</span>
-    <a href="/keisy" style="position:absolute;left:148px;top:1px;${crumb}color:${DARK}">кейсы Tourism</a>
+    <span style="position:absolute;left:148px;top:1px;display:inline-flex;gap:9px;align-items:baseline;white-space:nowrap;"><a href="/keisy" style="${crumb}color:${DARK}text-decoration:none;">Кейсы</a><span style="${crumb}color:${DARK}">→</span><span style="${crumb}color:${DARK}">Tourism</span></span>
   </div>
 
   <!-- чёрная пилюля «Кейс Whale Tours» -->
@@ -117,7 +121,7 @@ ${b("+40%")} заявок
     <div style="position:absolute;left:4.98px;top:0;width:113.2px;height:131.86px;">
       <div style="position:absolute;left:0;top:0;width:113.2px;height:113.2px;">
         <div style="position:absolute;left:-3.53px;top:-3.53px;width:120.42px;height:120.42px;border-radius:50%;background:${IG_GRAD};"></div>
-        <div style="position:absolute;left:0.08px;top:0.08px;width:113.2px;height:113.2px;border-radius:50%;background:${PH};border:3.61px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12354:3496" data-image-ref="ef10ef492c3259a39eadfc41a29b66eff029fc0c"></div>
+        <img src="/blk/keisy/tourism-02-542cbe.png" alt="" loading="lazy" style="position:absolute;left:0.08px;top:0.08px;width:113.2px;height:113.2px;border-radius:50%;border:3.61px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
       </div>
       ${pill(0.62, 105.11, 110.09, 26.74, 13.58, "whale.tours")}
     </div>
@@ -163,7 +167,7 @@ ${b("+40%")} заявок
     <div style="position:absolute;left:32.98px;top:23.16px;width:127.71px;height:145.96px;">
       <div style="position:absolute;left:0;top:0;width:127.71px;height:127.71px;">
         <div style="position:absolute;left:-3.98px;top:-3.98px;width:135.87px;height:135.87px;border-radius:50%;background:${IG_GRAD};"></div>
-        <div style="position:absolute;left:0.09px;top:0.09px;width:127.71px;height:127.71px;border-radius:50%;background:${PH};border:4.08px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12354:3538" data-image-ref="476cfe91605c87c91c7baec337993eba304f08da"></div>
+        <img src="/blk/keisy/tourism-33-7d4316.png" alt="" loading="lazy" style="position:absolute;left:0.09px;top:0.09px;width:127.71px;height:127.71px;border-radius:50%;border:4.08px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
       </div>
       ${pill(9.82, 115.78, 105.96, 30.17, 15.32, "tvs_visa", "https://www.instagram.com/tvs_visa?igsh=MTZ6dzJjdjJvdG1kaA==")}
     </div>
@@ -211,7 +215,7 @@ ${b("50+")} довольных клиентов на туры и визы за 2
       <div style="position:absolute;left:45.72px;top:0;width:193.49px;height:148.77px;">
         <div style="position:absolute;left:0;top:0;width:193.49px;height:127.71px;">
           <div style="position:absolute;left:29px;top:-3.98px;width:135.87px;height:135.87px;border-radius:50%;background:${IG_GRAD};"></div>
-          <div style="position:absolute;left:33.07px;top:0.1px;width:127.71px;height:127.71px;border-radius:50%;background:${PH};border:4.08px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12354:3569" data-image-ref="a130947d66e3453d581d180602bea9ba02a5ef9d"></div>
+          <img src="/blk/keisy/tourism-49-46cd20.png" alt="" loading="lazy" style="position:absolute;left:33.07px;top:0.1px;width:127.71px;height:127.71px;border-radius:50%;border:4.08px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
           ${ph(128.31, -6.31, 45.61, 45.61, "50%", "12354:3570", "92019180f321ba0111956ed4708ba9013ea4ae43")}
         </div>
         ${pill(32.18, 118.59, 128.42, 30.17, 15.32, "citgroupe", "https://www.instagram.com/citgroupe?igsh=cjZjcXl3Nm41aDAx")}
@@ -232,7 +236,7 @@ ${b("50+")} довольных клиентов на туры и визы за 2
       <div style="position:absolute;left:46.78px;top:0;width:193.49px;height:148.77px;">
         <div style="position:absolute;left:0;top:0;width:193.49px;height:127.71px;">
           <div style="position:absolute;left:29px;top:-3.98px;width:135.87px;height:135.87px;border-radius:50%;background:${IG_GRAD};"></div>
-          <div style="position:absolute;left:33.07px;top:0.1px;width:127.71px;height:127.71px;border-radius:50%;background:${PH};border:4.08px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12354:3585" data-image-ref="2f93bc79e67456e34c34a9a94694833f3599f160"></div>
+          <img src="/blk/keisy/tourism-55-6e61ad.png" alt="" loading="lazy" style="position:absolute;left:33.07px;top:0.1px;width:127.71px;height:127.71px;border-radius:50%;border:4.08px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
         </div>
         ${pill(14.88, 118.59, 162.66, 30.17, 15.32, "vizavshengen", "https://www.instagram.com/vizavshengen?igsh=MWkxc2FibWlrbDBtNQ==")}
       </div>

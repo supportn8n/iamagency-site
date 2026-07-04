@@ -1,3 +1,4 @@
+import IMGMAP from "./_imageMap.json";
 /* Страница «Кейсы», раздел Sport & Education — 1:1 из Figma IAM-WEB,
    фрейм «Sport & Education» #12354:2457 (1440×1813, белый фон #FFFFFF).
    Тексты дословно из макета. Фото недоступны (Figma API 429) —
@@ -34,8 +35,11 @@ const ph = (
   r: string,
   node: string,
   ref?: string,
-) =>
-  `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};border-radius:${r}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+) => {
+  const _f = (IMGMAP as Record<string, string>)[node + "|" + (ref || "")];
+  if (_f) return `<img src="/blk/keisy/${_f}" alt="" loading="lazy" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${r ? `border-radius:${r};` : ""}object-fit:cover;" />`;
+  return `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};${r ? `border-radius:${r};` : ""}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+};
 
 const card = (x: number, y: number, w: number, h: number, r: number) =>
   `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:#FFF;border:1.4px solid #000;border-radius:${r}px;box-sizing:border-box"></div>`;
@@ -72,7 +76,7 @@ export const sportHtml = `
   <div style="position:absolute;left:65px;top:30px;width:457px;height:21px;">
     <a href="/" style="position:absolute;left:0;top:1px;${crumb}color:${GRAY}">Главная</a>
     <span style="position:absolute;left:115px;top:0;${crumb}color:${GRAY}">→</span>
-    <a href="/keisy" style="position:absolute;left:148px;top:1px;${crumb}color:#1C1C1C;white-space:nowrap;">кейсы Sport &amp; Education</a>
+    <span style="position:absolute;left:148px;top:1px;display:inline-flex;gap:9px;align-items:baseline;white-space:nowrap;"><a href="/keisy" style="${crumb}color:#9A9895;white-space:nowrap;text-decoration:none;">Кейсы</a><span style="${crumb}color:#9A9895;white-space:nowrap;">→</span><span style="${crumb}color:#1C1C1C;white-space:nowrap;">Sport &amp; Education</span></span>
   </div>
 
   <!-- плашка «Кейс К1» -->

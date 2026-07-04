@@ -9,7 +9,7 @@ export const horecaHtml = `
 
   <div style="position:absolute;left:65px;top:30px;width:325px;height:21px;">
     <a href="/" style="position:absolute;left:0px;top:1px;width:105px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#9A9895;white-space:pre-line;margin:0;text-decoration:none;">Главная</a>
-    <a href="/keisy" style="position:absolute;left:148px;top:1px;width:177px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#1C1C1C;white-space:pre-line;margin:0;text-decoration:none;">кейсы HoReCa</a>
+    <span style="position:absolute;left:148px;top:1px;display:inline-flex;gap:9px;align-items:baseline;white-space:nowrap;"><a href="/keisy" style="width:177px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#9A9895;white-space:pre-line;margin:0;text-decoration:none;text-decoration:none;">Кейсы</a><span style="width:177px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#9A9895;white-space:pre-line;margin:0;text-decoration:none;">→</span><span style="width:177px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#1C1C1C;white-space:pre-line;margin:0;text-decoration:none;">HoReCa</span></span>
     <div style="position:absolute;left:115px;top:0px;width:23px;font-family:Inter,sans-serif;font-weight:500;font-size:23.42px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#9A9895;white-space:pre-line;margin:0;">→</div>
   </div>
   <div style="position:absolute;left:65px;top:128px;width:388px;height:68px;">
@@ -45,63 +45,63 @@ export const horecaHtml = `
       <div style="position:absolute;left:24.09px;top:0px;width:112.44px;height:112.44px;">
         <div style="position:absolute;left:-3.51px;top:-3.51px;width:119.61px;height:119.61px;border-radius:50%;background:linear-gradient(180deg, rgba(255, 0, 197, 1) 0%, rgba(255, 0, 0, 1) 32%, rgba(255, 134, 0, 1) 67%, rgba(255, 202, 0, 1) 100%);"></div>
         <div style="position:absolute;left:0.08px;top:0.08px;width:112.44px;height:112.44px;">
-          <div style="position:absolute;left:0px;top:0px;width:112.44px;height:112.44px;background:#E5E3E0;border-radius:50%;border:3.59px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12355:4089" data-image-ref="527ee56b38fd868dd00b23ed3e24f859b050ff35"></div>
+          <img src="/blk/keisy/horeca-01-5223f9.png" alt="" loading="lazy" style="position:absolute;left:0px;top:0px;width:112.44px;height:112.44px;border-radius:50%;border:3.59px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
         </div>
       </div>
       <div style="position:absolute;left:0px;top:104.41px;width:158.77px;height:26.56px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.67px solid #272727;box-sizing:border-box;border-radius:20.23px;">
         <div style="font-family:Inter,sans-serif;font-weight:500;font-size:13.49px;line-height:86%;letter-spacing:-0.03em;text-align:right;color:#272727;white-space:pre-line;margin:0;">altay_village_teletskoe</div>
       </div>
     </div>
-    <div style="position:absolute;left:22.24px;top:142.09px;width:172.98px;height:40.16px;background:#E5E3E0;" data-figma-node="12355:4092" data-image-ref="527ee56b38fd868dd00b23ed3e24f859b050ff35"></div>
-    <div style="position:absolute;left:213.14px;top:94.52px;width:173.51px;height:307.18px;background:#E5E3E0;border-radius:6.7px;" data-figma-node="12355:4093" data-image-ref="79b0da2da65b1b4c98a6a87f069923ced9b0e2c0"></div>
-    <div style="position:absolute;left:154.45px;top:32.13px;width:219.16px;height:48.7px;background:#E5E3E0;" data-figma-node="12355:4094" data-image-ref="527ee56b38fd868dd00b23ed3e24f859b050ff35"></div>
-    <div style="position:absolute;left:22.24px;top:193.98px;width:176.1px;height:234.71px;background:#E5E3E0;border-radius:6.18px;" data-figma-node="12355:4095" data-image-ref="ee6660b11791d1a7804fbf61ebf525772f6e0847"></div>
-    <div style="position:absolute;left:22.24px;top:436.77px;width:175.55px;height:177.82px;background:#E5E3E0;border-radius:6.18px;" data-figma-node="12355:4096" data-image-ref="74bebccd3c28f39bd962fd11ab7ba6114ed0288f"></div>
-    <div style="position:absolute;left:401.56px;top:13.59px;width:166.98px;height:296.84px;background:#E5E3E0;border-radius:6.18px;" data-figma-node="12355:4097" data-image-ref="3df152fbd0d46938e51f94a05ed3a205be216fa3"></div>
-    <div style="position:absolute;left:580.72px;top:13.59px;width:167.28px;height:297.39px;background:#E5E3E0;border-radius:6.18px;" data-figma-node="12355:4098" data-image-ref="54189ab9439738bb778e941bc8d21374f8d3bcec"></div>
-    <div style="position:absolute;left:401.56px;top:316.92px;width:167.48px;height:297.66px;background:#E5E3E0;border-radius:6.18px;" data-figma-node="12355:4099" data-image-ref="ae86d3fe09fe4da9c30a0d3724103a21156d6a03"></div>
-    <div style="position:absolute;left:580.1px;top:316.92px;width:167.48px;height:297.66px;background:#E5E3E0;border-radius:6.18px;" data-figma-node="12355:4100" data-image-ref="f414fdea30be10092b60b4d0da4855d95df414dc"></div>
-    <div style="position:absolute;left:211.9px;top:398.47px;width:174.83px;height:216.22px;background:#E5E3E0;border-radius:6.7px;" data-figma-node="12355:4101" data-image-ref="67c52af13d2713951d823bd1dc66115bb111b5df"></div>
+    <img src="/blk/keisy/horeca-02-37e6a0.png" alt="" loading="lazy" style="position:absolute;left:22.24px;top:142.09px;width:172.98px;height:40.16px;;object-fit:cover;" />
+    <img src="/blk/keisy/horeca-04.png" alt="" loading="lazy" style="position:absolute;left:213.14px;top:94.52px;width:173.51px;height:307.18px;border-radius:6.7px;;object-fit:cover;" />
+    <img src="/blk/keisy/horeca-06-64b5c9.png" alt="" loading="lazy" style="position:absolute;left:154.45px;top:32.13px;width:219.16px;height:48.7px;;object-fit:cover;" />
+    <img src="/blk/keisy/horeca-07.png" alt="" loading="lazy" style="position:absolute;left:22.24px;top:193.98px;width:176.1px;height:234.71px;border-radius:6.18px;;object-fit:cover;" />
+    <img src="/blk/keisy/horeca-08.png" alt="" loading="lazy" style="position:absolute;left:22.24px;top:436.77px;width:175.55px;height:177.82px;border-radius:6.18px;;object-fit:cover;" />
+    <img src="/blk/keisy/horeca-09.png" alt="" loading="lazy" style="position:absolute;left:401.56px;top:13.59px;width:166.98px;height:296.84px;border-radius:6.18px;;object-fit:cover;" />
+    <img src="/blk/keisy/horeca-10.png" alt="" loading="lazy" style="position:absolute;left:580.72px;top:13.59px;width:167.28px;height:297.39px;border-radius:6.18px;;object-fit:cover;" />
+    <img src="/blk/keisy/horeca-11.png" alt="" loading="lazy" style="position:absolute;left:401.56px;top:316.92px;width:167.48px;height:297.66px;border-radius:6.18px;;object-fit:cover;" />
+    <img src="/blk/keisy/horeca-12.png" alt="" loading="lazy" style="position:absolute;left:580.1px;top:316.92px;width:167.48px;height:297.66px;border-radius:6.18px;;object-fit:cover;" />
+    <img src="/blk/keisy/horeca-13-23c850.png" alt="" loading="lazy" style="position:absolute;left:211.9px;top:398.47px;width:174.83px;height:216.22px;border-radius:6.7px;;object-fit:cover;" />
   </div>
   <div style="position:absolute;left:65px;top:952px;width:1306px;height:721.02px;">
     <div style="position:absolute;left:470.86px;top:273.6px;width:80.11px;font-family:Inter,sans-serif;font-weight:600;font-size:9.07px;line-height:104%;text-transform:uppercase;color:#1F1F1F;white-space:pre-line;margin:0;">до:</div>
     <div style="position:absolute;left:461.03px;top:0px;width:383.94px;height:721.02px;">
       <div style="position:absolute;left:0px;top:178.37px;width:383.94px;height:542.66px;border-radius:15.12px;background:#FFFFFF;border:1.51px solid #000000;box-sizing:border-box;"></div>
-      <div style="position:absolute;left:24.94px;top:529.05px;width:100.64px;height:178.91px;background:#E5E3E0;border-radius:7.56px;" data-figma-node="12355:4107" data-image-ref="1c250dad96a9522d78464e143f906a817249dc94"></div>
-      <div style="position:absolute;left:141.33px;top:529.05px;width:101.02px;height:179.58px;background:#E5E3E0;border-radius:7.56px;" data-figma-node="12355:4108" data-image-ref="ee6f97cba614d3ae773c97ced3a5e553c91d3ece"></div>
-      <div style="position:absolute;left:258.48px;top:529.05px;width:100.64px;height:178.91px;background:#E5E3E0;border-radius:7.56px;" data-figma-node="12355:4109" data-image-ref="063a1c5f995efc08bbaa5f7c0523056e3e5e89a4"></div>
-      <div style="position:absolute;left:12.85px;top:287.2px;width:174.87px;height:232.41px;background:#E5E3E0;border-radius:7.81px;" data-figma-node="12355:4110" data-image-ref="290da9e8ea9957a74a0ca8e05a8facaeaf57ca10"></div>
-      <div style="position:absolute;left:196.5px;top:287.2px;width:175.24px;height:232.91px;background:#E5E3E0;border-radius:7.81px;" data-figma-node="12355:4111" data-image-ref="153999e0cbaffba337afe5a29446267d04187f2c"></div>
+      <img src="/blk/keisy/horeca-14.png" alt="" loading="lazy" style="position:absolute;left:24.94px;top:529.05px;width:100.64px;height:178.91px;border-radius:7.56px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-15.png" alt="" loading="lazy" style="position:absolute;left:141.33px;top:529.05px;width:101.02px;height:179.58px;border-radius:7.56px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-16.png" alt="" loading="lazy" style="position:absolute;left:258.48px;top:529.05px;width:100.64px;height:178.91px;border-radius:7.56px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-17.png" alt="" loading="lazy" style="position:absolute;left:12.85px;top:287.2px;width:174.87px;height:232.41px;border-radius:7.81px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-18.png" alt="" loading="lazy" style="position:absolute;left:196.5px;top:287.2px;width:175.24px;height:232.91px;border-radius:7.81px;;object-fit:cover;" />
       <div style="position:absolute;left:198.77px;top:272.84px;width:49.88px;font-family:Inter,sans-serif;font-weight:600;font-size:9.07px;line-height:104%;text-transform:uppercase;color:#1F1F1F;white-space:pre-line;margin:0;">после:</div>
       <div style="position:absolute;left:123.19px;top:0px;width:137.55px;height:160.23px;">
         <div style="position:absolute;left:0px;top:0px;width:137.55px;height:137.55px;">
           <div style="position:absolute;left:-4.29px;top:-4.29px;width:146.33px;height:146.33px;border-radius:50%;background:linear-gradient(180deg, rgba(255, 0, 197, 1) 0%, rgba(255, 0, 0, 1) 32%, rgba(255, 134, 0, 1) 67%, rgba(255, 202, 0, 1) 100%);"></div>
           <div style="position:absolute;left:0.1px;top:0.1px;width:137.55px;height:137.55px;">
-            <div style="position:absolute;left:0px;top:0px;width:137.55px;height:137.55px;background:#E5E3E0;border-radius:50%;border:4.39px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12355:4117" data-image-ref="26625e19ce2fd0012b79ac18029c26333f72ccaf"></div>
+            <img src="/blk/keisy/horeca-19-47b6b9.png" alt="" loading="lazy" style="position:absolute;left:0px;top:0px;width:137.55px;height:137.55px;border-radius:50%;border:4.39px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
           </div>
         </div>
         <div style="position:absolute;left:14.36px;top:127.73px;width:108.08px;height:32.5px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.82px solid #272727;box-sizing:border-box;border-radius:24.75px;">
           <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16.5px;line-height:86%;letter-spacing:-0.03em;text-align:right;color:#272727;white-space:pre-line;margin:0;">eskq.bar</div>
         </div>
       </div>
-      <div style="position:absolute;left:21.92px;top:186.68px;width:338.65px;height:75.74px;background:#E5E3E0;" data-figma-node="12355:4120" data-image-ref="26625e19ce2fd0012b79ac18029c26333f72ccaf"></div>
-      <div style="position:absolute;left:232.03px;top:0.76px;width:46.1px;height:46.1px;background:#E5E3E0;border-radius:50%;" data-figma-node="12355:4121" data-image-ref="f94aa13e14341b3c50825a26645563c6cad0b7a3"></div>
+      <img src="/blk/keisy/horeca-20-5cbfce.png" alt="" loading="lazy" style="position:absolute;left:21.92px;top:186.68px;width:338.65px;height:75.74px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-23.png" alt="" loading="lazy" style="position:absolute;left:232.03px;top:0.76px;width:46.1px;height:46.1px;border-radius:50%;;object-fit:cover;" />
     </div>
     <div style="position:absolute;left:922.06px;top:0px;width:383.94px;height:721.02px;">
       <div style="position:absolute;left:0px;top:178.37px;width:383.94px;height:542.66px;border-radius:15.12px;background:#FFFFFF;border:1.51px solid #000000;box-sizing:border-box;"></div>
-      <div style="position:absolute;left:24.94px;top:529.05px;width:100.64px;height:178.91px;background:#E5E3E0;border-radius:7.56px;" data-figma-node="12355:4124" data-image-ref="d5fa0a55b68cc84c213ecb704e42ad04d9d7d00b"></div>
-      <div style="position:absolute;left:141.33px;top:529.05px;width:101.02px;height:179.58px;background:#E5E3E0;border-radius:7.56px;" data-figma-node="12355:4125" data-image-ref="5486c74ebf2a2ca951ee1a8771b2e0f3fe111617"></div>
-      <div style="position:absolute;left:258.48px;top:529.05px;width:100.64px;height:178.91px;background:#E5E3E0;border-radius:7.56px;" data-figma-node="12355:4126" data-image-ref="a89f0d80fa1ed029feba14b4e2b78e060da42851"></div>
-      <div style="position:absolute;left:12.85px;top:287.2px;width:174.87px;height:232.41px;background:#E5E3E0;border-radius:7.81px;" data-figma-node="12355:4127" data-image-ref="aa1522038bae1edf2676bab9fb80c2387774a59d"></div>
-      <div style="position:absolute;left:196.5px;top:287.2px;width:175.24px;height:232.91px;background:#E5E3E0;border-radius:7.81px;" data-figma-node="12355:4128" data-image-ref="5c5f5032c25d7ced5349f542ed21805a7ad45165"></div>
+      <img src="/blk/keisy/horeca-24.png" alt="" loading="lazy" style="position:absolute;left:24.94px;top:529.05px;width:100.64px;height:178.91px;border-radius:7.56px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-25.png" alt="" loading="lazy" style="position:absolute;left:141.33px;top:529.05px;width:101.02px;height:179.58px;border-radius:7.56px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-26.png" alt="" loading="lazy" style="position:absolute;left:258.48px;top:529.05px;width:100.64px;height:178.91px;border-radius:7.56px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-27.png" alt="" loading="lazy" style="position:absolute;left:12.85px;top:287.2px;width:174.87px;height:232.41px;border-radius:7.81px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-28.png" alt="" loading="lazy" style="position:absolute;left:196.5px;top:287.2px;width:175.24px;height:232.91px;border-radius:7.81px;;object-fit:cover;" />
       <div style="position:absolute;left:198.77px;top:272.84px;width:49.88px;font-family:Inter,sans-serif;font-weight:600;font-size:9.07px;line-height:104%;text-transform:uppercase;color:#1F1F1F;white-space:pre-line;margin:0;">после:</div>
       <div style="position:absolute;left:12.85px;top:273.59px;width:80.11px;font-family:Inter,sans-serif;font-weight:600;font-size:9.07px;line-height:104%;text-transform:uppercase;color:#1F1F1F;white-space:pre-line;margin:0;">до:</div>
-      <div style="position:absolute;left:35.52px;top:191.21px;width:321.13px;height:71.82px;background:#E5E3E0;" data-figma-node="12355:4131" data-image-ref="43f14ed827478613263495d3ebe191a3dcda2dfc"></div>
+      <img src="/blk/keisy/horeca-29-3fe9e6.png" alt="" loading="lazy" style="position:absolute;left:35.52px;top:191.21px;width:321.13px;height:71.82px;;object-fit:cover;" />
       <div style="position:absolute;left:113.37px;top:0px;width:156.45px;height:160.23px;">
         <div style="position:absolute;left:9.83px;top:0px;width:137.55px;height:137.55px;">
           <div style="position:absolute;left:-4.29px;top:-4.29px;width:146.33px;height:146.33px;border-radius:50%;background:linear-gradient(180deg, rgba(255, 0, 197, 1) 0%, rgba(255, 0, 0, 1) 32%, rgba(255, 134, 0, 1) 67%, rgba(255, 202, 0, 1) 100%);"></div>
           <div style="position:absolute;left:0.1px;top:0.1px;width:137.55px;height:137.55px;">
-            <div style="position:absolute;left:0px;top:0px;width:137.55px;height:137.55px;background:#E5E3E0;border-radius:50%;border:4.39px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12355:4136" data-image-ref="43f14ed827478613263495d3ebe191a3dcda2dfc"></div>
+            <img src="/blk/keisy/horeca-32-67034f.png" alt="" loading="lazy" style="position:absolute;left:0px;top:0px;width:137.55px;height:137.55px;border-radius:50%;border:4.39px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
           </div>
         </div>
         <div style="position:absolute;left:0px;top:127.73px;width:156.45px;height:32.5px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.82px solid #272727;box-sizing:border-box;border-radius:24.75px;">
@@ -115,21 +115,21 @@ export const horecaHtml = `
         <div style="position:absolute;left:9.83px;top:0px;width:137.55px;height:137.55px;">
           <div style="position:absolute;left:-4.29px;top:-4.29px;width:146.33px;height:146.33px;border-radius:50%;background:linear-gradient(180deg, rgba(255, 0, 197, 1) 0%, rgba(255, 0, 0, 1) 32%, rgba(255, 134, 0, 1) 67%, rgba(255, 202, 0, 1) 100%);"></div>
           <div style="position:absolute;left:0.1px;top:0.1px;width:137.55px;height:137.55px;">
-            <div style="position:absolute;left:0px;top:0px;width:137.55px;height:137.55px;background:#E5E3E0;border-radius:50%;border:4.39px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12355:4145" data-image-ref="efb062934b361e2723d6c92c6bd9810fc93999db"></div>
+            <img src="/blk/keisy/horeca-33-478f0d.png" alt="" loading="lazy" style="position:absolute;left:0px;top:0px;width:137.55px;height:137.55px;border-radius:50%;border:4.39px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
           </div>
         </div>
         <div style="position:absolute;left:0px;top:127.73px;width:156.45px;height:32.5px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.82px solid #272727;box-sizing:border-box;border-radius:24.75px;">
           <div style="font-family:Inter,sans-serif;font-weight:500;font-size:16.5px;line-height:86%;letter-spacing:-0.03em;text-align:right;color:#272727;white-space:pre-line;margin:0;"><a href="https://www.instagram.com/usadba_seehof.ru?igsh=MXNqaWl1cjN3dndsYQ==" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">usadba_seehof</a></div>
         </div>
       </div>
-      <div style="position:absolute;left:30.23px;top:187.43px;width:321.51px;height:71.9px;background:#E5E3E0;" data-figma-node="12355:4148" data-image-ref="efb062934b361e2723d6c92c6bd9810fc93999db"></div>
-      <div style="position:absolute;left:16.63px;top:287.2px;width:174.87px;height:232.41px;background:#E5E3E0;border-radius:7.81px;" data-figma-node="12355:4149" data-image-ref="6e165b25288097275d6b5bf38a20af9e34195e7b"></div>
-      <div style="position:absolute;left:200.28px;top:287.2px;width:175.24px;height:232.91px;background:#E5E3E0;border-radius:7.81px;" data-figma-node="12355:4150" data-image-ref="ac3817e89220ba3d054d472cfcf3478faef406ae"></div>
+      <img src="/blk/keisy/horeca-34-2b6556.png" alt="" loading="lazy" style="position:absolute;left:30.23px;top:187.43px;width:321.51px;height:71.9px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-37.png" alt="" loading="lazy" style="position:absolute;left:16.63px;top:287.2px;width:174.87px;height:232.41px;border-radius:7.81px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-38.png" alt="" loading="lazy" style="position:absolute;left:200.28px;top:287.2px;width:175.24px;height:232.91px;border-radius:7.81px;;object-fit:cover;" />
       <div style="position:absolute;left:202.55px;top:272.84px;width:49.88px;font-family:Inter,sans-serif;font-weight:600;font-size:9.07px;line-height:104%;text-transform:uppercase;color:#1F1F1F;white-space:pre-line;margin:0;">после:</div>
       <div style="position:absolute;left:16.63px;top:273.59px;width:80.11px;font-family:Inter,sans-serif;font-weight:600;font-size:9.07px;line-height:104%;text-transform:uppercase;color:#1F1F1F;white-space:pre-line;margin:0;">до:</div>
-      <div style="position:absolute;left:27.21px;top:529.05px;width:100.64px;height:178.91px;background:#E5E3E0;border-radius:7.56px;" data-figma-node="12355:4153" data-image-ref="6f2154300c30cfa5fbc793d8b5d2e5a985ea1186"></div>
-      <div style="position:absolute;left:143.6px;top:529.05px;width:101.02px;height:179.58px;background:#E5E3E0;border-radius:7.56px;" data-figma-node="12355:4154" data-image-ref="e60c8968d4f5c88d22469391ac4726a92668e765"></div>
-      <div style="position:absolute;left:260.75px;top:529.05px;width:100.64px;height:178.91px;background:#E5E3E0;border-radius:7.56px;" data-figma-node="12355:4155" data-image-ref="6adde7daf7476ab2903a2a987fbde633b23c7dcd"></div>
+      <img src="/blk/keisy/horeca-39.png" alt="" loading="lazy" style="position:absolute;left:27.21px;top:529.05px;width:100.64px;height:178.91px;border-radius:7.56px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-40.png" alt="" loading="lazy" style="position:absolute;left:143.6px;top:529.05px;width:101.02px;height:179.58px;border-radius:7.56px;;object-fit:cover;" />
+      <img src="/blk/keisy/horeca-41.png" alt="" loading="lazy" style="position:absolute;left:260.75px;top:529.05px;width:100.64px;height:178.91px;border-radius:7.56px;;object-fit:cover;" />
     </div>
     <div style="position:absolute;left:184.41px;top:154.93px;width:21.84px;height:20.38px;background:#E5E3E0;" data-figma-node="12355:4156"></div>
   </div>

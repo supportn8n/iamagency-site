@@ -1,3 +1,4 @@
+import IMGMAP from "./_imageMap.json";
 /* Раздел «Кейсы / Real Estate» — 1:1 из Figma IAM-WEB,
    фрейм «Real Estate » #12354:2962 (1440×2735, белый фон).
    Тексты дословно из макета. Фото недоступны (Figma API 429) —
@@ -44,8 +45,11 @@ const ph = (
   r: string,
   node: string,
   ref?: string,
-) =>
-  `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};${r ? `border-radius:${r};` : ""}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+) => {
+  const _f = (IMGMAP as Record<string, string>)[node + "|" + (ref || "")];
+  if (_f) return `<img src="/blk/keisy/${_f}" alt="" loading="lazy" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${r ? `border-radius:${r};` : ""}object-fit:cover;" />`;
+  return `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};${r ? `border-radius:${r};` : ""}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+};
 
 /* Белая карточка с чёрной обводкой */
 const card = (x: number, y: number, w: number, h: number, r: number) =>
@@ -81,7 +85,7 @@ export const realEstateHtml = `
   <div style="position:absolute;left:65px;top:30px;width:377px;height:21px;">
     <a href="/" style="position:absolute;left:0;top:1px;${crumb}color:${GRAY}">Главная</a>
     <span style="position:absolute;left:115px;top:0;${crumb}color:${GRAY}">→</span>
-    <a href="/keisy" style="position:absolute;left:148px;top:1px;${crumb}color:${DARK}">кейсы Real Estate </a>
+    <span style="position:absolute;left:148px;top:1px;display:inline-flex;gap:9px;align-items:baseline;white-space:nowrap;"><a href="/keisy" style="${crumb}color:${DARK}text-decoration:none;">Кейсы</a><span style="${crumb}color:${DARK}">→</span><span style="${crumb}color:${DARK}">Real Estate</span></span>
   </div>
 
   <!-- чёрная пилюля «Кейс Villo» -->
@@ -117,7 +121,7 @@ export const realEstateHtml = `
     <div style="position:absolute;left:38px;top:0;width:118.49px;height:127.51px;">
       <div style="position:absolute;left:5.41px;top:0;width:109.47px;height:109.47px;">
         <div style="position:absolute;left:-3.41px;top:-3.41px;width:116.45px;height:116.45px;border-radius:50%;background:${IG_GRAD};"></div>
-        <div style="position:absolute;left:0.08px;top:0.08px;width:109.47px;height:109.47px;border-radius:50%;background:${PH};border:3.49px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12354:3192" data-image-ref="38dd10dc916b99066bc3eff4b8370e5503e655be"></div>
+        <img src="/blk/keisy/realestate-02-1a6031.png" alt="" loading="lazy" style="position:absolute;left:0.08px;top:0.08px;width:109.47px;height:109.47px;border-radius:50%;border:3.49px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
       </div>
       ${pill(0, 101.65, 118.49, 25.86, 13.13, "villo.indonesia")}
     </div>

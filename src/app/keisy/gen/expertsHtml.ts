@@ -1,3 +1,4 @@
+import IMGMAP from "./_imageMap.json";
 /* Раздел «Кейсы / Experts» — 1:1 из Figma IAM-WEB,
    фрейм «Experts» #12354:2718 (1440×989, белый фон).
    Тексты дословно из макета. Фото недоступны (Figma API 429) —
@@ -34,8 +35,11 @@ const ph = (
   r: string,
   node: string,
   ref?: string,
-) =>
-  `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};${r ? `border-radius:${r};` : ""}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+) => {
+  const _f = (IMGMAP as Record<string, string>)[node + "|" + (ref || "")];
+  if (_f) return `<img src="/blk/keisy/${_f}" alt="" loading="lazy" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;${r ? `border-radius:${r};` : ""}object-fit:cover;" />`;
+  return `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${PH};${r ? `border-radius:${r};` : ""}" data-figma-node="${node}"${ref ? ` data-image-ref="${ref}"` : ""}></div>`;
+};
 
 /* Пилюля с ником аккаунта */
 const pill = (
@@ -57,7 +61,7 @@ export const expertsHtml = `
   <div style="position:absolute;left:65px;top:30px;width:330px;height:21px;">
     <a href="/" style="position:absolute;left:0;top:1px;${crumb}color:${GRAY}">Главная</a>
     <span style="position:absolute;left:115px;top:0;${crumb}color:${GRAY}">→</span>
-    <a href="/keisy" style="position:absolute;left:148px;top:1px;${crumb}color:${DARK}">кейсы Experts</a>
+    <span style="position:absolute;left:148px;top:1px;display:inline-flex;gap:9px;align-items:baseline;white-space:nowrap;"><a href="/keisy" style="${crumb}color:${DARK}text-decoration:none;">Кейсы</a><span style="${crumb}color:${DARK}">→</span><span style="${crumb}color:${DARK}">Experts</span></span>
   </div>
 
   <!-- ================= карточка кейса ================= -->
@@ -70,7 +74,7 @@ export const expertsHtml = `
     <div style="position:absolute;left:23.75px;top:30.03px;width:129.21px;height:145.28px;">
       <div style="position:absolute;left:2.1px;top:0;width:127.12px;height:127.12px;">
         <div style="position:absolute;left:-3.96px;top:-3.97px;width:135.23px;height:135.23px;border-radius:50%;background:${IG_GRAD};"></div>
-        <div style="position:absolute;left:0.09px;top:0.09px;width:127.12px;height:127.12px;border-radius:50%;background:${PH};border:4.06px solid #FFFFFF;box-sizing:border-box;" data-figma-node="12354:2899" data-image-ref="f29fa22051288bb61f6afa9ca8217c88d0332778"></div>
+        <img src="/blk/keisy/experts-01-69bd11.png" alt="" loading="lazy" style="position:absolute;left:0.09px;top:0.09px;width:127.12px;height:127.12px;border-radius:50%;border:4.06px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
       </div>
       ${pill(0, 115.24, 129.21, 30.03, 15.25, "natalianaila")}
     </div>
