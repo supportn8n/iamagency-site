@@ -42,6 +42,7 @@ const ph = (
 };
 
 /* Пилюля с ником аккаунта */
+const instaFrom = (t: string) => { const u = String(t).trim().replace(/^@/, ""); return /^[\w.]+$/.test(u) ? "https://instagram.com/" + u : ""; };
 const pill = (
   x: number,
   y: number,
@@ -49,8 +50,13 @@ const pill = (
   h: number,
   fs: number,
   text: string,
-) =>
-  `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:0.76px solid #272727;border-radius:23px;background:#FFF;display:flex;align-items:center;justify-content:center;box-sizing:border-box;"><span style="${nick(fs)}">${text}</span></div>`;
+) => {
+  const st = `position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:0.76px solid #272727;border-radius:23px;background:#FFF;display:flex;align-items:center;justify-content:center;box-sizing:border-box;text-decoration:none;`;
+  const _h = instaFrom(text);
+  return _h
+    ? `<a href="${_h}" target="_blank" rel="noopener" style="${st}"><span style="${nick(fs)}">${text}</span></a>`
+    : `<div style="${st}"><span style="${nick(fs)}">${text}</span></div>`;
+};
 
 export const expertsH = 989;
 

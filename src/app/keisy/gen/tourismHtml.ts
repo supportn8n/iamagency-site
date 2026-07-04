@@ -57,6 +57,7 @@ const card = (x: number, y: number, w: number, h: number, r: number) =>
   `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:#FFFFFF;border:1.4px solid #000000;border-radius:${r}px;box-sizing:border-box;"></div>`;
 
 /* Пилюля с ником */
+const instaFrom = (t: string) => { const u = String(t).trim().replace(/^@/, ""); return /^[\w.]+$/.test(u) ? "https://instagram.com/" + u : ""; };
 const pill = (
   x: number,
   y: number,
@@ -65,10 +66,7 @@ const pill = (
   fs: number,
   text: string,
   href?: string,
-) =>
-  href
-    ? `<a href="${href}" target="_blank" rel="noopener" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:0.77px solid #272727;border-radius:23px;background:#FFF;display:flex;align-items:center;justify-content:center;box-sizing:border-box;text-decoration:none;"><span style="${nick(fs)}">${text}</span></a>`
-    : `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:0.77px solid #272727;border-radius:23px;background:#FFF;display:flex;align-items:center;justify-content:center;box-sizing:border-box;"><span style="${nick(fs)}">${text}</span></div>`;
+) => { const _h = href || instaFrom(text); return _h ? `<a href="${_h}" target="_blank" rel="noopener" style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:0.77px solid #272727;border-radius:23px;background:#FFF;display:flex;align-items:center;justify-content:center;box-sizing:border-box;text-decoration:none;"><span style="${nick(fs)}">${text}</span></a>` : `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;border:0.77px solid #272727;border-radius:23px;background:#FFF;display:flex;align-items:center;justify-content:center;box-sizing:border-box;"><span style="${nick(fs)}">${text}</span></div>`; }
 
 export const tourismH = 1813;
 
@@ -83,7 +81,7 @@ export const tourismHtml = `
     <div style="position:absolute;left:0;top:0;width:555px;height:68px;background:${DARK};border-radius:84.17px;"></div>
     <div style="position:absolute;left:27.21px;top:13.6px;width:446px;${caseTitle}">Кейс Whale Tours </div>
     <div style="position:absolute;left:493px;top:6px;width:55.27px;height:55.27px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0px 0px 3.4px 3.4px rgba(245, 93, 28, 1);"></div>
-    ${ph(502.35, 15.35, 36.56, 36.56, "", "12354:3358")}
+    <svg style="position:absolute;left:502.35px;top:15.35px;width:36.56px;height:36.56px" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
   </div>
 
   <!-- ================= карточка кейса Whale Tours (текст) ================= -->

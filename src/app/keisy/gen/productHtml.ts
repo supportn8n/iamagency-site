@@ -11,9 +11,9 @@ export const productHtml = `
   </div>
   <div style="position:absolute;left:65px;top:128px;width:537px;height:68px;">
     <div style="position:absolute;left:0px;top:0px;width:537px;height:68px;border-radius:84.17px;background:#1C1C1C;"></div>
-    <div style="position:absolute;left:27.21px;top:13.6px;width:429px;font-family:Inter,sans-serif;font-weight:400;font-size:47.4px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#FFFFFF;white-space:pre-line;margin:0;">Кейс Lanagrossa </div>
+    <div style="position:absolute;left:27.21px;top:13.6px;width:429px;font-family:Inter,sans-serif;font-weight:400;font-size:47.4px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap;margin:0;">Кейс Lanagrossa </div>
     <div style="position:absolute;left:475px;top:6px;width:55.27px;height:55.27px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0px 0px 3.4px 3.4px rgba(137, 146, 228, 1);"></div>
-    <div style="position:absolute;left:484.35px;top:15.35px;width:36.56px;height:36.56px;background:#E5E3E0;" data-figma-node="12355:4877"></div>
+    <svg style="position:absolute;left:484.35px;top:15.35px;width:36.56px;height:36.56px" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
   </div>
   <div style="position:absolute;left:65px;top:237.96px;width:456px;height:601.4px;border-radius:15.23px;">
     <div style="position:absolute;left:3.05px;top:32.73px;width:401.95px;font-family:Inter,sans-serif;font-weight:400;font-size:19.79px;line-height:104%;color:#1F1F1F;white-space:pre-line;margin:0;">Развитие узнаваемости в России интернационального бренда, активное ведение трех социальных сетей, коммуникация с подписчиками, увеличение продаж</div>
@@ -44,9 +44,9 @@ export const productHtml = `
           <img src="/blk/keisy/product-01.webp" alt="" loading="lazy" style="position:absolute;left:0px;top:0px;width:111.71px;height:111.71px;border-radius:50%;border:3.57px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
         </div>
       </div>
-      <div style="position:absolute;left:0px;top:103.73px;width:123.37px;height:26.39px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.67px solid #272727;box-sizing:border-box;border-radius:20.1px;">
+      <a href="https://instagram.com/lanagrossa_ru" target="_blank" rel="noopener" style="text-decoration:none;"><div style="position:absolute;left:0px;top:103.73px;width:123.37px;height:26.39px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.67px solid #272727;box-sizing:border-box;border-radius:20.1px;">
         <div style="font-family:Inter,sans-serif;font-weight:500;font-size:13.4px;line-height:86%;letter-spacing:-0.03em;text-align:right;color:#272727;white-space:pre-line;margin:0;">lanagrossa_ru</div>
-      </div>
+      </div></a>
     </div>
     <img src="/blk/keisy/product-02-41aa8e.webp" alt="" loading="lazy" style="position:absolute;left:2.46px;top:212.98px;width:179.99px;height:236.12px;border-radius:6.14px;;object-fit:cover;" />
     <img src="/blk/keisy/product-03-41aa8e.webp" alt="" loading="lazy" style="position:absolute;left:192.73px;top:212.98px;width:180.53px;height:236.83px;border-radius:6.14px;;object-fit:cover;" />

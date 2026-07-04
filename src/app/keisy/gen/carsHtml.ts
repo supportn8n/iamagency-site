@@ -104,9 +104,9 @@ export const carsHtml = `
             <img src="/blk/keisy/cars-30-6a6106.webp" alt="" loading="lazy" style="position:absolute;left:0px;top:0px;width:112.33px;height:112.33px;border-radius:50%;border:3.59px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
           </div>
         </div>
-        <div style="position:absolute;left:8.02px;top:104.31px;width:95.67px;height:26.54px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.67px solid #272727;box-sizing:border-box;border-radius:20.21px;">
+        <a href="https://instagram.com/prive_flight" target="_blank" rel="noopener" style="text-decoration:none;"><div style="position:absolute;left:8.02px;top:104.31px;width:95.67px;height:26.54px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.67px solid #272727;box-sizing:border-box;border-radius:20.21px;">
           <div style="font-family:Inter,sans-serif;font-weight:500;font-size:13.47px;line-height:86%;letter-spacing:-0.03em;text-align:right;color:#272727;white-space:pre-line;margin:0;">prive_flight</div>
-        </div>
+        </div></a>
       </div>
     </div>
     <div style="position:absolute;left:1155.82px;top:295.83px;width:112.33px;height:130.85px;">
@@ -117,9 +117,9 @@ export const carsHtml = `
             <img src="/blk/keisy/cars-31-42efa8.webp" alt="" loading="lazy" style="position:absolute;left:0px;top:0px;width:112.33px;height:112.33px;border-radius:50%;border:3.59px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
           </div>
         </div>
-        <div style="position:absolute;left:8.02px;top:104.31px;width:95.67px;height:26.54px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.67px solid #272727;box-sizing:border-box;border-radius:20.21px;">
+        <a href="https://instagram.com/top_gyre" target="_blank" rel="noopener" style="text-decoration:none;"><div style="position:absolute;left:8.02px;top:104.31px;width:95.67px;height:26.54px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.67px solid #272727;box-sizing:border-box;border-radius:20.21px;">
           <div style="font-family:Inter,sans-serif;font-weight:500;font-size:13.47px;line-height:86%;letter-spacing:-0.03em;text-align:right;color:#272727;white-space:pre-line;margin:0;">top_gyre</div>
-        </div>
+        </div></a>
       </div>
     </div>
     <div style="position:absolute;left:1140.65px;top:229.39px;width:150.36px;font-family:Coolvetica,sans-serif;font-weight:400;font-size:22.48px;line-height:104%;text-align:center;color:#221F20;white-space:pre-line;margin:0;">аренда авто</div>

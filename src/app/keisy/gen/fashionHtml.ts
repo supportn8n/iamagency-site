@@ -61,6 +61,7 @@ const avatar = (
   return ring_div + inner;
 };
 
+const instaFrom = (t: string) => { const u = String(t).trim().replace(/^@/, ""); return /^[\w.]+$/.test(u) ? "https://instagram.com/" + u : ""; };
 const pill = (
   x: number,
   y: number,
@@ -71,9 +72,8 @@ const pill = (
   href?: string,
 ) => {
   const st = `position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${h}px;display:flex;align-items:center;justify-content:center;background:#FFF;border:0.77px solid #272727;border-radius:${h / 2}px;box-sizing:border-box;font-family:Inter,sans-serif;font-weight:500;font-size:${fs}px;line-height:86%;letter-spacing:-0.03em;color:#272727;text-decoration:none;white-space:nowrap;`;
-  return href
-    ? `<a href="${href}" target="_blank" rel="noopener" style="${st}">${text}</a>`
-    : `<div style="${st}">${text}</div>`;
+  const _h = href || instaFrom(text);
+  return _h ? `<a href="${_h}" target="_blank" rel="noopener" style="${st}">${text}</a>` : `<div style="${st}">${text}</div>`;
 };
 
 export const fashionHtml = `
@@ -87,7 +87,7 @@ export const fashionHtml = `
     <div style="position:absolute;left:0;top:0;width:451px;height:68px;background:#1C1C1C;border-radius:84.17px;"></div>
     <span style="position:absolute;left:27.21px;top:13.6px;font-family:Inter,sans-serif;font-weight:400;font-size:47.4px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#FFF;white-space:nowrap;">Кейс Prelesть </span>
     <div style="position:absolute;left:390px;top:6px;width:55.27px;height:55.27px;border-radius:50%;background:#FFF;box-shadow:inset 0 0 3.4px 3.4px rgba(137,146,228,1);"></div>
-    ${ph(399.35, 15.35, 36.56, 36.56, "0", "12354:1684")}
+    <svg style="position:absolute;left:399.35px;top:15.35px;width:36.56px;height:36.56px" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
   </div>
 
   <!-- карточка «Задача клиента / Что сделали / результат» -->

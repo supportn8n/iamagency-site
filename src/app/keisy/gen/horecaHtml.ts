@@ -11,9 +11,9 @@ export const horecaHtml = `
   </div>
   <div style="position:absolute;left:65px;top:128px;width:388px;height:68px;">
     <div style="position:absolute;left:0px;top:0px;width:388px;height:68px;border-radius:84.17px;background:#1C1C1C;"></div>
-    <div style="position:absolute;left:27.21px;top:13.6px;width:279px;font-family:Inter,sans-serif;font-weight:400;font-size:47.4px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#FFFFFF;white-space:pre-line;margin:0;">Кейс алтай </div>
+    <div style="position:absolute;left:27.21px;top:13.6px;width:279px;font-family:Inter,sans-serif;font-weight:400;font-size:47.4px;line-height:86%;letter-spacing:-0.05em;text-transform:uppercase;color:#FFFFFF;white-space:nowrap;margin:0;">Кейс алтай </div>
     <div style="position:absolute;left:325px;top:6px;width:55.27px;height:55.27px;border-radius:50%;background:#FFFFFF;box-shadow:inset 0px 0px 3.4px 3.4px rgba(255, 173, 25, 1);"></div>
-    <div style="position:absolute;left:334.35px;top:15.35px;width:36.56px;height:36.56px;background:#E5E3E0;" data-figma-node="12354:3934"></div>
+    <svg style="position:absolute;left:334.35px;top:15.35px;width:36.56px;height:36.56px" viewBox="0 0 24 24" fill="none" stroke="#1C1C1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
   </div>
   <div style="position:absolute;left:68px;top:262px;width:462.29px;height:580.82px;border-radius:14.82px;">
     <div style="position:absolute;left:2.96px;top:23.71px;width:434.87px;font-family:Inter,sans-serif;font-weight:400;font-size:19.26px;line-height:104%;color:#1F1F1F;white-space:pre-line;margin:0;">Имиджевое ведение в премиум сегменте, коммуникация с подписчиками, создание атмосферных рилс и увеличение узнаваемости и лояльных гостей</div>
@@ -45,9 +45,9 @@ export const horecaHtml = `
           <img src="/blk/keisy/horeca-01-5223f9.webp" alt="" loading="lazy" style="position:absolute;left:0px;top:0px;width:112.44px;height:112.44px;border-radius:50%;border:3.59px solid #FFFFFF;box-sizing:border-box;;object-fit:cover;" />
         </div>
       </div>
-      <div style="position:absolute;left:0px;top:104.41px;width:158.77px;height:26.56px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.67px solid #272727;box-sizing:border-box;border-radius:20.23px;">
+      <a href="https://instagram.com/altay_village_teletskoe" target="_blank" rel="noopener" style="text-decoration:none;"><div style="position:absolute;left:0px;top:104.41px;width:158.77px;height:26.56px;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:0.67px solid #272727;box-sizing:border-box;border-radius:20.23px;">
         <div style="font-family:Inter,sans-serif;font-weight:500;font-size:13.49px;line-height:86%;letter-spacing:-0.03em;text-align:right;color:#272727;white-space:pre-line;margin:0;">altay_village_teletskoe</div>
-      </div>
+      </div></a>
     </div>
     <img src="/blk/keisy/horeca-02-37e6a0.webp" alt="" loading="lazy" style="position:absolute;left:22.24px;top:142.09px;width:172.98px;height:40.16px;;object-fit:cover;" />
     <img src="/blk/keisy/horeca-04.webp" alt="" loading="lazy" style="position:absolute;left:213.14px;top:94.52px;width:173.51px;height:307.18px;border-radius:6.7px;;object-fit:cover;" />
