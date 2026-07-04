@@ -129,7 +129,12 @@ export const CASES: CaseDir[] = [
 
 export const getCase = (slug: string) => CASES.find((c) => c.slug === slug);
 
-/* карта для FloatChips: подстрока плашки → адрес страницы направления */
+/* карта для FloatChips на ГЛАВНОЙ: подстрока плашки → отдельная страница направления */
 export const caseLinks: Record<string, string> = Object.fromEntries(
   CASES.map((c) => [c.chipKey, `/case/${c.slug}`])
+);
+
+/* карта для FloatChips на ХАБЕ /keisy: подстрока плашки → прокрутка к секции на той же странице */
+export const caseScrollLinks: Record<string, string> = Object.fromEntries(
+  CASES.map((c) => [c.chipKey, `#${c.slug}`])
 );
