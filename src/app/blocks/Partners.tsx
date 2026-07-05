@@ -12,24 +12,8 @@ export default function Partners() {
         className="relative w-full overflow-hidden"
         style={{ height: "5.2cqw" }}
       >
-        {/* голубая фигура за логотипами (та же, что в Hero) */}
-        <img
-          src="/blk/hero/blue_full2.png"
-          alt=""
-          aria-hidden
-          draggable={false}
-          style={{
-            position: "absolute",
-            left: "8.68cqw",
-            top: "-32.1cqw",
-            width: "67.3cqw",
-            height: "50.7cqw",
-            maxWidth: "none",
-            pointerEvents: "none",
-            userSelect: "none",
-          }}
-        />
-        {/* лента логотипов поверх фигуры */}
+        {/* лента логотипов (голубая фигура-продолжение убрана: новый hero держит
+            фигуру внутри себя, чтобы она не резалась в следующем блоке) */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="marquee-track absolute left-0 top-0 h-full">
             {[0, 1, 2, 3].map((i) => (

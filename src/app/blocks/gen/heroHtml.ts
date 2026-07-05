@@ -4,9 +4,9 @@
 export const heroH = 1024;
 export const heroHtml = `<div style="position:absolute;left:0;top:0;width:1440px;height:1024px;background:#FFF;overflow:hidden"><div style="width:1461px;height:966px;position:absolute;left:25px;top:68px"><div style="width:1418px;height:941px;border-radius:42px;border:2px solid #1C1C1C;box-shadow:0 4px 4px 0 rgba(0, 0, 0, 0.25) inset;position:absolute;left:15px;top:18px"></div><div style="width:1377px;height:911px;border-radius:42px;background:#FFF;position:absolute;left:23px;top:22px"></div><div style="width:1461px;height:67px;background:#FFF;position:absolute;left:0px;top:899px"></div><div style="width:78px;height:44px;background:#FFF;position:absolute;left:1350px;top:0px"></div></div>
 
-<img src="/blk/hero/blue_full2.png" style="width:1358px;height:1221px;object-fit:cover;position:absolute;left:720px;top:264px" alt="" />
-<img src="/blk/hero/white_fig.png" style="width:332px;height:299px;object-fit:cover;position:absolute;left:115px;top:621px" alt="" />
-<img src="/blk/hero/glass_full.png" style="width:460px;height:229px;object-fit:contain;position:absolute;left:674px;top:86px" alt="" />
+<img src="/blk/hero/blue_full2.png" style="width:840px;height:820px;object-fit:contain;position:absolute;left:760px;top:250px" alt="" />
+<img src="/blk/hero/hero-speckled.webp" style="width:332px;height:299px;position:absolute;left:115px;top:621px" alt="" />
+<img src="/blk/hero/hero-egg.webp" style="width:460px;height:229px;position:absolute;left:674px;top:86px" alt="" />
 
 <div style="position:absolute;left:72px;top:150px;width:640px;font-family:Inter;font-weight:500;font-size:37.669px;line-height:1em;letter-spacing:-1.883px;text-transform:uppercase;color:#1C1C1C"><span style="font-family:Inter, -apple-system, Roboto, Helvetica, sans-serif;font-weight:500;font-size:38px;color:rgba(28,28,28,1)">Стратегия <span style="color:#9A9895">/</span> Брендинг<br>Ведение соцсетей <span style="color:#9A9895">/</span> Контент и съёмки <span style="color:#9A9895">/</span> Продвижение</span></div>
 
