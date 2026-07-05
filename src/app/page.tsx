@@ -13,7 +13,7 @@ import { otzyvyHtml } from "./blocks/gen/otzyvyHtml";
 import { shkolaHtml } from "./blocks/gen/shkolaHtml";
 import { blogHtml } from "./blocks/gen/blogHtml";
 import { kontaktyHtml } from "./blocks/gen/kontaktyHtml";
-import { futerHtml } from "./blocks/gen/futerHtml";
+import { futerHtml, futerH } from "./blocks/gen/futerHtml";
 import { caseLinks } from "./case/cases";
 
 /* Главная 1:1 из экспортов Builder.io. Между Hero и УТП — лента Партнёров.
@@ -48,7 +48,7 @@ export default function Home() {
       <div id="kontakty">
         <ContactBlock html={kontaktyHtml} />
       </div>
-      <BuilderBlock html={futerHtml} />
+      <BuilderBlock html={futerHtml} h={futerH} />
     </>
   );
 }

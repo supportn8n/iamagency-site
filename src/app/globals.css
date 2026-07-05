@@ -87,3 +87,18 @@ div[layer-name="🤵🏼‍♂️"] span {
   height: 80px !important;
 }
 
+
+/* Парящая анимация 3D-фигур в Hero (яйцо + каменная) */
+@keyframes heroFloatEgg {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-16px) rotate(-4deg); }
+}
+@keyframes heroFloatStone {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-12px) rotate(5deg); }
+}
+.hero-float-egg   { animation: heroFloatEgg 6.5s ease-in-out infinite; transform-origin: center; will-change: transform; }
+.hero-float-stone { animation: heroFloatStone 5.5s ease-in-out infinite; transform-origin: center; will-change: transform; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-float-egg, .hero-float-stone { animation: none; }
+}
