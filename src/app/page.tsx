@@ -7,8 +7,10 @@ import FloatChips from "./blocks/FloatChips";
 import { heroHtml, heroH } from "./blocks/gen/heroHtml";
 import { heroTabletHtml, heroTabletH } from "./blocks/gen/heroTabletHtml";
 import { utpHtml } from "./blocks/gen/utpHtml";
+import { utpTabletHtml, utpTabletH } from "./blocks/gen/utpTabletHtml";
 import { uslugiHtml } from "./blocks/gen/uslugiHtml";
 import { tarifyHtml } from "./blocks/gen/tarifyHtml";
+import { tarifyTabletHtml, tarifyTabletH } from "./blocks/gen/tarifyTabletHtml";
 import { portfolioHtml } from "./blocks/gen/portfolioHtml";
 import { marketingHtml } from "./blocks/gen/marketingHtml";
 import { otzyvyHtml } from "./blocks/gen/otzyvyHtml";
@@ -16,6 +18,7 @@ import { shkolaHtml } from "./blocks/gen/shkolaHtml";
 import { blogHtml } from "./blocks/gen/blogHtml";
 import { kontaktyHtml } from "./blocks/gen/kontaktyHtml";
 import { futerHtml, futerH } from "./blocks/gen/futerHtml";
+import { futerTabletHtml, futerTabletH } from "./blocks/gen/futerTabletHtml";
 import { caseLinks } from "./case/cases";
 
 /* Главная 1:1 из экспортов Builder.io. Между Hero и УТП — лента Партнёров.
