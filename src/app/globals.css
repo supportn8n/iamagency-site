@@ -103,9 +103,16 @@ div[layer-name="🤵🏼‍♂️"] span {
   .hero-float-egg, .hero-float-stone { animation: none; }
 }
 
-/* Переключение десктоп/планшет (BuilderBlock-холсты). Планшет < 900px. */
-.rb-tablet { display: none; }
+/* Переключение десктоп/планшет/мобайл (BuilderBlock-холсты).
+   Десктоп > 900px, планшет 600–900px, мобайл < 600px.
+   Мобайл опционален: если у блока нет мобильного холста (нет .rb-has-mobile),
+   планшетный показывается и на мобайле. */
+.rb-tablet, .rb-mobile { display: none; }
 @media (max-width: 900px) {
   .rb-desktop { display: none; }
   .rb-tablet  { display: block; }
+}
+@media (max-width: 600px) {
+  .rb-tablet.rb-has-mobile { display: none; }
+  .rb-mobile { display: block; }
 }
