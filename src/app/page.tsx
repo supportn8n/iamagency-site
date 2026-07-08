@@ -29,8 +29,12 @@ import { caseLinks } from "./case/cases";
 export default function Home() {
   return (
     <>
-      <ResponsiveBlock desktopHtml={heroHtml} desktopH={heroH} tabletHtml={heroTabletHtml} tabletH={heroTabletH} />
-      <Partners />
+      <div className="relative z-20">
+        <ResponsiveBlock desktopHtml={heroHtml} desktopH={heroH} tabletHtml={heroTabletHtml} tabletH={heroTabletH} />
+      </div>
+      <div className="relative z-30">
+        <Partners />
+      </div>
       <ResponsiveBlock desktopHtml={utpHtml} desktopH={utpH} tabletHtml={utpTabletHtml} tabletH={utpTabletH} />
       <div id="uslugi">
         <ResponsiveBlock desktopHtml={uslugiHtml} desktopH={uslugiH} tabletHtml={uslugiTabletHtml} tabletH={uslugiTabletH} />
