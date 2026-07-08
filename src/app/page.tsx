@@ -17,6 +17,7 @@ import { portfolioTabletHtml, portfolioTabletH } from "./blocks/gen/portfolioTab
 import { marketingHtml, marketingH } from "./blocks/gen/marketingHtml";
 import { marketingTabletHtml, marketingTabletH } from "./blocks/gen/marketingTabletHtml";
 import { otzyvyHtml } from "./blocks/gen/otzyvyHtml";
+import { otzyvyTabletHtml, otzyvyTabletH } from "./blocks/gen/otzyvyTabletHtml";
 import { shkolaHtml } from "./blocks/gen/shkolaHtml";
 import { blogHtml } from "./blocks/gen/blogHtml";
 import { kontaktyHtml } from "./blocks/gen/kontaktyHtml";
@@ -55,7 +56,17 @@ export default function Home() {
           tabletH={marketingTabletH}
         />
       </div>
-      <MarqueeBlock html={otzyvyHtml} rowTop={275} rowHeight={475} speed={32} />
+      <MarqueeBlock
+        html={otzyvyHtml}
+        rowTop={275}
+        rowHeight={475}
+        speed={32}
+        tabletHtml={otzyvyTabletHtml}
+        tabletH={otzyvyTabletH}
+        tabletRowTop={201}
+        tabletRowHeight={288.41}
+        tabletSpeed={32}
+      />
       <div id="shkola">
         <BuilderBlock html={shkolaHtml} />
       </div>

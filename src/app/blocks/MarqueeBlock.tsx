@@ -3,14 +3,23 @@
 import { useEffect, useRef } from "react";
 import BuilderBlock from "./BuilderBlock";
 
-/* Бесконечная лента поверх статичного Builder.io-HTML.
-   Находит карточки ряда по сигнатуре (top/height), переносит их в «трек»,
-   клонирует на ширину периода и крутит через Web Animations API.
-   Если заданы clipLeft/clipWidth — лента подрезается ровно по этой области
-   (по панели), чтобы карточки не вылезали за край и аккуратно исчезали. */
-export default function MarqueeBlock({
+type MarqueeCanvasProps = {
+  html: string;
+  h?: number;
+  w?: number;
+  rowTop: number;
+  rowHeight: number;
+  speed?: number;
+  clipLeft?: number;
+  clipWidth?: number;
+  clipRadius?: number;
+  clip?: boolean;
+};
+
+function MarqueeCanvas({
   html,
   h,
+  w = 1440,
   rowTop,
   rowHeight,
   speed = 45,
@@ -18,17 +27,7 @@ export default function MarqueeBlock({
   clipWidth,
   clipRadius = 24,
   clip = false,
-}: {
-  html: string;
-  h?: number;
-  rowTop: number;
-  rowHeight: number;
-  speed?: number; // px/сек
-  clipLeft?: number;
-  clipWidth?: number;
-  clipRadius?: number;
-  clip?: boolean;
-}) {
+}: MarqueeCanvasProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,8 +48,8 @@ export default function MarqueeBlock({
       let minLeft = Infinity;
       for (const c of cards) {
         const left = parseFloat(c.style.left || "0");
-        const w = parseFloat(c.style.width || "0");
-        maxRight = Math.max(maxRight, left + w);
+        const width = parseFloat(c.style.width || "0");
+        maxRight = Math.max(maxRight, left + width);
         minLeft = Math.min(minLeft, left);
       }
       const gap = 32;
@@ -60,7 +59,6 @@ export default function MarqueeBlock({
       const offX = shouldClip ? clipLeft! : 0;
       const offY = shouldClip ? rowTop : 0;
 
-      // контейнер-обрезка по панели (если задан) — иначе трек прямо на холсте
       let host: HTMLElement = canvas;
       if (shouldClip) {
         const box = document.createElement("div");
@@ -75,7 +73,6 @@ export default function MarqueeBlock({
       track.style.cssText = "position:absolute;left:0;top:0;width:0;height:0";
       host.appendChild(track);
       for (const c of cards) {
-        // координаты делаем относительными к контейнеру-обрезке
         c.style.left = parseFloat(c.style.left || "0") - offX + "px";
         c.style.top = parseFloat(c.style.top || "0") - offY + "px";
         track.appendChild(c);
@@ -96,11 +93,67 @@ export default function MarqueeBlock({
     }, 120);
 
     return () => clearTimeout(t);
-  }, [rowTop, rowHeight, speed, clipLeft, clipWidth, clipRadius]);
+  }, [rowTop, rowHeight, speed, clip, clipLeft, clipWidth, clipRadius]);
 
   return (
     <div ref={ref}>
-      <BuilderBlock html={html} h={h} />
+      <BuilderBlock html={html} w={w} h={h} />
     </div>
+  );
+}
+
+export default function MarqueeBlock({
+  html,
+  h,
+  rowTop,
+  rowHeight,
+  speed = 45,
+  clipLeft,
+  clipWidth,
+  clipRadius = 24,
+  clip = false,
+  tabletHtml,
+  tabletH,
+  tabletRowTop,
+  tabletRowHeight,
+  tabletSpeed,
+}: MarqueeCanvasProps & {
+  tabletHtml?: string;
+  tabletH?: number;
+  tabletRowTop?: number;
+  tabletRowHeight?: number;
+  tabletSpeed?: number;
+}) {
+  const desktop = (
+    <MarqueeCanvas
+      html={html}
+      h={h}
+      rowTop={rowTop}
+      rowHeight={rowHeight}
+      speed={speed}
+      clipLeft={clipLeft}
+      clipWidth={clipWidth}
+      clipRadius={clipRadius}
+      clip={clip}
+    />
+  );
+
+  if (!tabletHtml) return desktop;
+
+  return (
+    <>
+      <div className="rb-desktop">{desktop}</div>
+      <div className="rb-tablet">
+        <MarqueeCanvas
+          html={tabletHtml}
+          h={tabletH}
+          w={768}
+          rowTop={tabletRowTop ?? rowTop}
+          rowHeight={tabletRowHeight ?? rowHeight}
+          speed={tabletSpeed ?? speed}
+          clip={clip}
+        />
+      </div>
+    </>
   );
 }
