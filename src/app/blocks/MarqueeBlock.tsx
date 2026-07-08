@@ -17,6 +17,7 @@ export default function MarqueeBlock({
   clipLeft,
   clipWidth,
   clipRadius = 24,
+  clip = false,
 }: {
   html: string;
   h?: number;
@@ -26,6 +27,7 @@ export default function MarqueeBlock({
   clipLeft?: number;
   clipWidth?: number;
   clipRadius?: number;
+  clip?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -54,13 +56,13 @@ export default function MarqueeBlock({
       const gap = 32;
       const period = maxRight - minLeft + gap;
 
-      const clip = clipLeft != null && clipWidth != null;
-      const offX = clip ? clipLeft! : 0;
-      const offY = clip ? rowTop : 0;
+      const shouldClip = clip && clipLeft != null && clipWidth != null;
+      const offX = shouldClip ? clipLeft! : 0;
+      const offY = shouldClip ? rowTop : 0;
 
       // контейнер-обрезка по панели (если задан) — иначе трек прямо на холсте
       let host: HTMLElement = canvas;
-      if (clip) {
+      if (shouldClip) {
         const box = document.createElement("div");
         box.style.cssText =
           `position:absolute;left:${clipLeft}px;top:${rowTop}px;width:${clipWidth}px;` +
