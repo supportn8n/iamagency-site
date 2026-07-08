@@ -12,11 +12,19 @@ import BuilderBlock from "./BuilderBlock";
 export default function FloatChips({
   html,
   h,
+  tabletHtml,
+  tabletH,
+  mobileHtml,
+  mobileH,
   links,
   mode = "float",
 }: {
   html: string;
   h?: number;
+  tabletHtml?: string;
+  tabletH?: number;
+  mobileHtml?: string;
+  mobileH?: number;
   links?: Record<string, string>;
   mode?: "float" | "flee";
 }) {
@@ -33,8 +41,8 @@ export default function FloatChips({
       const pills = ([...root.querySelectorAll("div")] as HTMLElement[]).filter((d) => {
         const s = d.getAttribute("style") || "";
         return (
-          s.includes("border-radius:99px") &&
-          s.includes("height:80px") &&
+          s.includes("border-radius:") &&
+          s.includes("background:#1C1C1C") &&
           d.children.length === 0
         );
       });
@@ -156,9 +164,29 @@ export default function FloatChips({
     };
   }, [links, mode]);
 
+  if (!tabletHtml) {
+    return (
+      <div ref={ref}>
+        <BuilderBlock html={html} h={h} overflow={mode === "flee" ? "visible" : "hidden"} />
+      </div>
+    );
+  }
+
   return (
     <div ref={ref}>
-      <BuilderBlock html={html} h={h} overflow={mode === "flee" ? "visible" : "hidden"} />
+      <div className="rb-desktop">
+        <BuilderBlock html={html} w={1440} h={h} overflow={mode === "flee" ? "visible" : "hidden"} />
+      </div>
+      {tabletHtml ? (
+        <div className={mobileHtml ? "rb-tablet rb-has-mobile" : "rb-tablet"}>
+          <BuilderBlock html={tabletHtml} w={768} h={tabletH ?? h} overflow={mode === "flee" ? "visible" : "hidden"} />
+        </div>
+      ) : null}
+      {mobileHtml ? (
+        <div className="rb-mobile">
+          <BuilderBlock html={mobileHtml} w={375} h={mobileH ?? tabletH ?? h} overflow={mode === "flee" ? "visible" : "hidden"} />
+        </div>
+      ) : null}
     </div>
   );
 }

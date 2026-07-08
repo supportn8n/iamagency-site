@@ -12,7 +12,8 @@ import { uslugiHtml, uslugiH } from "./blocks/gen/uslugiHtml";
 import { uslugiTabletHtml, uslugiTabletH } from "./blocks/gen/uslugiTabletHtml";
 import { tarifyHtml, tarifyH } from "./blocks/gen/tarifyHtml";
 import { tarifyTabletHtml, tarifyTabletH } from "./blocks/gen/tarifyTabletHtml";
-import { portfolioHtml } from "./blocks/gen/portfolioHtml";
+import { portfolioHtml, portfolioH } from "./blocks/gen/portfolioHtml";
+import { portfolioTabletHtml, portfolioTabletH } from "./blocks/gen/portfolioTabletHtml";
 import { marketingHtml } from "./blocks/gen/marketingHtml";
 import { otzyvyHtml } from "./blocks/gen/otzyvyHtml";
 import { shkolaHtml } from "./blocks/gen/shkolaHtml";
@@ -38,7 +39,7 @@ export default function Home() {
         <ResponsiveBlock desktopHtml={tarifyHtml} desktopH={tarifyH} tabletHtml={tarifyTabletHtml} tabletH={tarifyTabletH} />
       </div>
       <div id="portfolio">
-        <FloatChips html={portfolioHtml} links={caseLinks} />
+        <FloatChips html={portfolioHtml} h={portfolioH} tabletHtml={portfolioTabletHtml} tabletH={portfolioTabletH} links={caseLinks} />
       </div>
       {/* подтягиваем вверх на 2px — закрываем зазор между половинками спирали на стыке блоков */}
       <div style={{ marginTop: "-2px" }}>
