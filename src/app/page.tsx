@@ -14,7 +14,8 @@ import { tarifyHtml, tarifyH } from "./blocks/gen/tarifyHtml";
 import { tarifyTabletHtml, tarifyTabletH } from "./blocks/gen/tarifyTabletHtml";
 import { portfolioHtml, portfolioH } from "./blocks/gen/portfolioHtml";
 import { portfolioTabletHtml, portfolioTabletH } from "./blocks/gen/portfolioTabletHtml";
-import { marketingHtml } from "./blocks/gen/marketingHtml";
+import { marketingHtml, marketingH } from "./blocks/gen/marketingHtml";
+import { marketingTabletHtml, marketingTabletH } from "./blocks/gen/marketingTabletHtml";
 import { otzyvyHtml } from "./blocks/gen/otzyvyHtml";
 import { shkolaHtml } from "./blocks/gen/shkolaHtml";
 import { blogHtml } from "./blocks/gen/blogHtml";
@@ -47,7 +48,12 @@ export default function Home() {
       </div>
       {/* подтягиваем вверх на 2px — закрываем зазор между половинками спирали на стыке блоков */}
       <div style={{ marginTop: "-2px" }}>
-        <BuilderBlock html={marketingHtml} />
+        <ResponsiveBlock
+          desktopHtml={marketingHtml}
+          desktopH={marketingH}
+          tabletHtml={marketingTabletHtml}
+          tabletH={marketingTabletH}
+        />
       </div>
       <MarqueeBlock html={otzyvyHtml} rowTop={275} rowHeight={475} speed={32} />
       <div id="shkola">
