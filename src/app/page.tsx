@@ -22,7 +22,8 @@ import { shkolaHtml, shkolaH } from "./blocks/gen/shkolaHtml";
 import { shkolaTabletHtml, shkolaTabletH } from "./blocks/gen/shkolaTabletHtml";
 import { blogHtml, blogH } from "./blocks/gen/blogHtml";
 import { blogTabletHtml, blogTabletH } from "./blocks/gen/blogTabletHtml";
-import { kontaktyHtml } from "./blocks/gen/kontaktyHtml";
+import { kontaktyHtml, kontaktyH } from "./blocks/gen/kontaktyHtml";
+import { kontaktyTabletHtml, kontaktyTabletH } from "./blocks/gen/kontaktyTabletHtml";
 import { futerHtml, futerH } from "./blocks/gen/futerHtml";
 import { futerTabletHtml, futerTabletH } from "./blocks/gen/futerTabletHtml";
 import { caseLinks } from "./case/cases";
@@ -76,7 +77,7 @@ export default function Home() {
         <ResponsiveBlock desktopHtml={blogHtml} desktopH={blogH} tabletHtml={blogTabletHtml} tabletH={blogTabletH} />
       </div>
       <div id="kontakty">
-        <ContactBlock html={kontaktyHtml} />
+        <ContactBlock html={kontaktyHtml} h={kontaktyH} tabletHtml={kontaktyTabletHtml} tabletH={kontaktyTabletH} />
       </div>
       <BuilderBlock html={futerHtml} h={futerH} />
     </>
