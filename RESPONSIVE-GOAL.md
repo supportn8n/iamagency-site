@@ -56,7 +56,7 @@ get_figma_data иногда СХЛОПЫВАЕТ внутренности кар
 - [x] УТП — mobile 375 собран из Figma frame #365:3186, карточки/кнопка/соц-иконки подключены, donut целый без обрезки, build+скрин 375/768/1440
 - [x] Услуги / Тарифы — mobile 375 разделён из Figma frame #365:3003 на uslugiMobileHtml (541) + tarifyMobileHtml (333), строки/карточки/CTA подключены, build+скрин 375/768/1440
 - [x] Портфолио — mobile 375 собран из Figma frame #365:2946, FloatChips принимает mobileHtml/mobileH, chips/CTA/assets подключены, build+скрин 375/768/1440
-- [ ] Маркетинг
+- [x] Маркетинг — mobile 375 собран из Figma frame #365:2938, подключён через ResponsiveBlock mobileHtml/mobileH, Figma-ассеты/CTA на месте, build+скрин 375/768/1440
 - [ ] Отзывы / Школа
 - [ ] Блог
 - [ ] Контакты

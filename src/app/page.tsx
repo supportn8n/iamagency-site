@@ -21,6 +21,7 @@ import { portfolioTabletHtml, portfolioTabletH } from "./blocks/gen/portfolioTab
 import { portfolioMobileHtml, portfolioMobileH } from "./blocks/gen/portfolioMobileHtml";
 import { marketingHtml, marketingH } from "./blocks/gen/marketingHtml";
 import { marketingTabletHtml, marketingTabletH } from "./blocks/gen/marketingTabletHtml";
+import { marketingMobileHtml, marketingMobileH } from "./blocks/gen/marketingMobileHtml";
 import { otzyvyHtml } from "./blocks/gen/otzyvyHtml";
 import { otzyvyTabletHtml, otzyvyTabletH } from "./blocks/gen/otzyvyTabletHtml";
 import { shkolaHtml, shkolaH } from "./blocks/gen/shkolaHtml";
@@ -98,6 +99,8 @@ export default function Home() {
           desktopH={marketingH}
           tabletHtml={marketingTabletHtml}
           tabletH={marketingTabletH}
+          mobileHtml={marketingMobileHtml}
+          mobileH={marketingMobileH}
         />
       </div>
       <MarqueeBlock
