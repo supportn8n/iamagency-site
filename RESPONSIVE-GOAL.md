@@ -58,7 +58,7 @@ get_figma_data иногда СХЛОПЫВАЕТ внутренности кар
 - [x] Портфолио — mobile 375 собран из Figma frame #365:2946, FloatChips принимает mobileHtml/mobileH, chips/CTA/assets подключены, build+скрин 375/768/1440
 - [x] Маркетинг — mobile 375 собран из Figma frame #365:2938, подключён через ResponsiveBlock mobileHtml/mobileH, Figma-ассеты/CTA на месте, build+скрин 375/768/1440
 - [x] Отзывы / Школа — mobile 375 собран единым Figma frame #365:2734, MarqueeBlock расширен mobile-пропсами, школа на mobile не дублируется, build+скрин 375/768/1440
-- [ ] Блог
+- [x] Блог — mobile 375 собран из Figma frame #365:2603, карточки/категории/декоративные Figma-ассеты подключены, build+скрин 375/768/1440
 - [ ] Контакты
 - [ ] Футер
 
