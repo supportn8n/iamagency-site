@@ -6,6 +6,7 @@ import ContactBlock from "./blocks/ContactBlock";
 import FloatChips from "./blocks/FloatChips";
 import { heroHtml, heroH } from "./blocks/gen/heroHtml";
 import { heroTabletHtml, heroTabletH } from "./blocks/gen/heroTabletHtml";
+import { heroMobileHtml, heroMobileH } from "./blocks/gen/heroMobileHtml";
 import { utpHtml, utpH } from "./blocks/gen/utpHtml";
 import { utpTabletHtml, utpTabletH } from "./blocks/gen/utpTabletHtml";
 import { uslugiHtml, uslugiH } from "./blocks/gen/uslugiHtml";
@@ -35,7 +36,14 @@ export default function Home() {
   return (
     <>
       <div className="relative z-20">
-        <ResponsiveBlock desktopHtml={heroHtml} desktopH={heroH} tabletHtml={heroTabletHtml} tabletH={heroTabletH} />
+        <ResponsiveBlock
+          desktopHtml={heroHtml}
+          desktopH={heroH}
+          tabletHtml={heroTabletHtml}
+          tabletH={heroTabletH}
+          mobileHtml={heroMobileHtml}
+          mobileH={heroMobileH}
+        />
       </div>
       <div className="relative z-30">
         <Partners />
