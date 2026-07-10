@@ -18,6 +18,7 @@ import { tarifyTabletHtml, tarifyTabletH } from "./blocks/gen/tarifyTabletHtml";
 import { tarifyMobileHtml, tarifyMobileH } from "./blocks/gen/tarifyMobileHtml";
 import { portfolioHtml, portfolioH } from "./blocks/gen/portfolioHtml";
 import { portfolioTabletHtml, portfolioTabletH } from "./blocks/gen/portfolioTabletHtml";
+import { portfolioMobileHtml, portfolioMobileH } from "./blocks/gen/portfolioMobileHtml";
 import { marketingHtml, marketingH } from "./blocks/gen/marketingHtml";
 import { marketingTabletHtml, marketingTabletH } from "./blocks/gen/marketingTabletHtml";
 import { otzyvyHtml } from "./blocks/gen/otzyvyHtml";
@@ -80,7 +81,15 @@ export default function Home() {
         />
       </div>
       <div id="portfolio">
-        <FloatChips html={portfolioHtml} h={portfolioH} tabletHtml={portfolioTabletHtml} tabletH={portfolioTabletH} links={caseLinks} />
+        <FloatChips
+          html={portfolioHtml}
+          h={portfolioH}
+          tabletHtml={portfolioTabletHtml}
+          tabletH={portfolioTabletH}
+          mobileHtml={portfolioMobileHtml}
+          mobileH={portfolioMobileH}
+          links={caseLinks}
+        />
       </div>
       {/* подтягиваем вверх на 2px — закрываем зазор между половинками спирали на стыке блоков */}
       <div style={{ marginTop: "-2px" }}>
