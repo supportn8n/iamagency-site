@@ -12,8 +12,10 @@ import { utpTabletHtml, utpTabletH } from "./blocks/gen/utpTabletHtml";
 import { utpMobileHtml, utpMobileH } from "./blocks/gen/utpMobileHtml";
 import { uslugiHtml, uslugiH } from "./blocks/gen/uslugiHtml";
 import { uslugiTabletHtml, uslugiTabletH } from "./blocks/gen/uslugiTabletHtml";
+import { uslugiMobileHtml, uslugiMobileH } from "./blocks/gen/uslugiMobileHtml";
 import { tarifyHtml, tarifyH } from "./blocks/gen/tarifyHtml";
 import { tarifyTabletHtml, tarifyTabletH } from "./blocks/gen/tarifyTabletHtml";
+import { tarifyMobileHtml, tarifyMobileH } from "./blocks/gen/tarifyMobileHtml";
 import { portfolioHtml, portfolioH } from "./blocks/gen/portfolioHtml";
 import { portfolioTabletHtml, portfolioTabletH } from "./blocks/gen/portfolioTabletHtml";
 import { marketingHtml, marketingH } from "./blocks/gen/marketingHtml";
@@ -58,10 +60,24 @@ export default function Home() {
         mobileH={utpMobileH}
       />
       <div id="uslugi">
-        <ResponsiveBlock desktopHtml={uslugiHtml} desktopH={uslugiH} tabletHtml={uslugiTabletHtml} tabletH={uslugiTabletH} />
+        <ResponsiveBlock
+          desktopHtml={uslugiHtml}
+          desktopH={uslugiH}
+          tabletHtml={uslugiTabletHtml}
+          tabletH={uslugiTabletH}
+          mobileHtml={uslugiMobileHtml}
+          mobileH={uslugiMobileH}
+        />
       </div>
       <div id="tarify">
-        <ResponsiveBlock desktopHtml={tarifyHtml} desktopH={tarifyH} tabletHtml={tarifyTabletHtml} tabletH={tarifyTabletH} />
+        <ResponsiveBlock
+          desktopHtml={tarifyHtml}
+          desktopH={tarifyH}
+          tabletHtml={tarifyTabletHtml}
+          tabletH={tarifyTabletH}
+          mobileHtml={tarifyMobileHtml}
+          mobileH={tarifyMobileH}
+        />
       </div>
       <div id="portfolio">
         <FloatChips html={portfolioHtml} h={portfolioH} tabletHtml={portfolioTabletHtml} tabletH={portfolioTabletH} links={caseLinks} />
