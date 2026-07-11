@@ -104,7 +104,7 @@ div[layer-name="🤵🏼‍♂️"] span {
 }
 
 /* Переключение десктоп/планшет/мобайл (BuilderBlock-холсты).
-   Десктоп > 900px, планшет 600–900px, мобайл < 600px.
+   Десктоп > 900px, планшет 768–900px, мобайл <= 767px.
    Мобайл опционален: если у блока нет мобильного холста (нет .rb-has-mobile),
    планшетный показывается и на мобайле. */
 .rb-tablet, .rb-mobile { display: none; }
@@ -112,7 +112,7 @@ div[layer-name="🤵🏼‍♂️"] span {
   .rb-desktop { display: none; }
   .rb-tablet  { display: block; }
 }
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .rb-tablet.rb-has-mobile { display: none; }
   .rb-mobile { display: block; }
 }

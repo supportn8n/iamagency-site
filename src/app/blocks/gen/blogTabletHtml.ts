@@ -1,6 +1,5 @@
-// Blog tablet version from Figma frame 366:6737. The last category chip sits below
-// the nominal 941px frame, so the canvas keeps enough height to show it cleanly.
-export const blogTabletH = 1010;
+// Blog tablet version from Figma frame 366:6737 (768x941).
+export const blogTabletH = 941;
 
 const card = (x: number, y: number, img: string, text: string, textH = 91) => `
 <div style="width:326.85px;height:206px;filter:drop-shadow(0 14px 24px rgba(0,0,0,.2));position:absolute;left:${x}px;top:${y}px">
@@ -24,7 +23,7 @@ const chip = (x: number, y: number, w: number, text: string, textW: number) => `
   <div style="color:#1C1C1C;font-family:Inter;font-size:21.501px;font-weight:400;line-height:86%;letter-spacing:-1.075px;text-transform:uppercase;position:absolute;left:${w - 22.82}px;top:4.9px;width:15px;height:18px;white-space:nowrap"><span style="font-family:Inter, -apple-system, Roboto, Helvetica, sans-serif;font-weight:400;font-size:21.5px;color:#1C1C1C">+</span></div>
 </div>`;
 
-export const blogTabletHtml = `<div style="position:absolute;left:0;top:0;width:768px;height:1010px;background:#FFF;overflow:visible">
+export const blogTabletHtml = `<div style="position:absolute;left:0;top:0;width:768px;height:941px;background:#FFF;overflow:visible">
 <div layer-name="Блог" style="color:#1C1C1C;font-family:Coolvetica;font-size:55.402px;font-weight:400;line-height:86%;text-transform:uppercase;position:absolute;left:40px;top:90px;width:128px;height:48px;white-space:nowrap"><span style="font-family:Coolvetica, -apple-system, Roboto, Helvetica, sans-serif;font-weight:400;font-size:55px;color:#1C1C1C">Блог</span></div>
 <img layer-name="30Файл  1" style="width:377.49px;height:377.49px;position:absolute;left:540px;top:550px;object-fit:contain" src="/blk/blog/orange_flower.png" alt="" />
 ${card(40, 440.4, "/blk/blog/0b713db08b53.png", "Что реально влияет на продажи в 2026<br/>В 2026 продажи больше не зависят только от продукта. Сильный продукт...")}
@@ -36,7 +35,6 @@ ${chip(40, 751, 98.02, "смм", 52)}
 ${chip(40, 794.81, 170.06, "маркетинг", 124)}
 ${chip(289, 838.37, 170.06, "нейросети", 125)}
 ${chip(289, 751, 125.5, "визуал", 81)}
-${chip(40, 957.88, 130.7, "тренды", 86)}
 ${chip(289, 794.56, 251, "социальные сети", 210)}
 ${chip(40, 838.63, 205.7, "продвижение", 160)}
 </div>`;

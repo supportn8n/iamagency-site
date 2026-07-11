@@ -96,7 +96,7 @@ function MarqueeCanvas({
   }, [rowTop, rowHeight, speed, clip, clipLeft, clipWidth, clipRadius]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} style={{ overflow: "hidden" }}>
       <BuilderBlock html={html} w={w} h={h} />
     </div>
   );

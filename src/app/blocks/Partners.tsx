@@ -37,7 +37,7 @@ export default function Partners() {
               height: calc(100cqw * 60.31 / 768);
             }
           }
-          @media (max-width: 600px) {
+          @media (max-width: 767px) {
             .partners-section { height: calc(100cqw * 97 / 375); }
             .partners-track {
               top: calc(100cqw * 25 / 375);
