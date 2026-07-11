@@ -21,16 +21,27 @@ const TABLET_FIELDS = [
   { name: "Бюджет", line: 537.38, ph: "Бюджет" },
 ];
 
+const MOBILE_FIELDS = [
+  { name: "РРјСЏ", line: 380.84, ph: "Р’Р°С€Рµ РёРјСЏ" },
+  { name: "РўРµР»РµС„РѕРЅ", line: 455.62, ph: "+7 ___ ___ __ __" },
+  { name: "РЎР°Р№С‚", line: 530.4, ph: "РЎР°Р№С‚ / СЃРѕС†СЃРµС‚Рё РїСЂРѕРµРєС‚Р°" },
+  { name: "Р‘СЋРґР¶РµС‚", line: 605.17, ph: "Р‘СЋРґР¶РµС‚" },
+];
+
 export default function ContactBlock({
   html,
   h,
   tabletHtml,
   tabletH,
+  mobileHtml,
+  mobileH,
 }: {
   html: string;
   h?: number;
   tabletHtml?: string;
   tabletH?: number;
+  mobileHtml?: string;
+  mobileH?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -47,13 +58,15 @@ export default function ContactBlock({
         if (!modal || !close) return;
         canvas.dataset.kfReady = "1";
 
-        const isTablet = canvas.getAttribute("data-contact-variant") === "tablet";
-        const fields = isTablet ? TABLET_FIELDS : FIELDS;
-        const left = isTablet ? 429 : 815;
-        const topOffset = isTablet ? 33 : 44;
-        const width = isTablet ? 299 : 560;
-        const height = isTablet ? 22 : 44;
-        const fontSize = isTablet ? 13.45 : 26.9;
+        const variant = canvas.getAttribute("data-contact-variant");
+        const isTablet = variant === "tablet";
+        const isMobile = variant === "mobile";
+        const fields = isMobile ? MOBILE_FIELDS : isTablet ? TABLET_FIELDS : FIELDS;
+        const left = isMobile ? 20 : isTablet ? 429 : 815;
+        const topOffset = isMobile ? 23 : isTablet ? 33 : 44;
+        const width = isMobile ? 335 : isTablet ? 299 : 560;
+        const height = isMobile ? 20 : isTablet ? 22 : 44;
+        const fontSize = isMobile ? 13 : isTablet ? 13.45 : 26.9;
 
         const inputs: HTMLInputElement[] = [];
         for (const f of fields) {
@@ -61,6 +74,13 @@ export default function ContactBlock({
           inp.type = "text";
           inp.placeholder = f.ph;
           inp.setAttribute("aria-label", f.name);
+          if (isMobile) {
+            const mobileLabels = ["Имя", "Телефон", "Сайт", "Бюджет"];
+            const mobilePlaceholders = ["Ваше имя", "+7 ___ ___ __ __", "Сайт / соцсети проекта", "Бюджет"];
+            const idx = inputs.length;
+            inp.placeholder = mobilePlaceholders[idx] ?? f.ph;
+            inp.setAttribute("aria-label", mobileLabels[idx] ?? f.name);
+          }
           inp.style.cssText = [
             "position:absolute",
             `left:${left}px`,
@@ -119,9 +139,14 @@ export default function ContactBlock({
           <div className="rb-desktop">
             <BuilderBlock html={html} h={h} overflow="visible" />
           </div>
-          <div className="rb-tablet">
+          <div className={mobileHtml ? "rb-tablet rb-has-mobile" : "rb-tablet"}>
             <BuilderBlock html={tabletHtml} w={768} h={tabletH} overflow="visible" />
           </div>
+          {mobileHtml ? (
+            <div className="rb-mobile">
+              <BuilderBlock html={mobileHtml} w={375} h={mobileH} overflow="visible" />
+            </div>
+          ) : null}
         </>
       ) : (
         <BuilderBlock html={html} h={h} overflow="visible" />
