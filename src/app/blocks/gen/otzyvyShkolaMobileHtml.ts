@@ -34,7 +34,7 @@ const schoolRow = (num: string, title: string, text: string) => `
 
 export const otzyvyShkolaMobileHtml = `<div style="position:absolute;left:0;top:0;width:375px;height:874px;background:#1C1C1C;overflow:visible">
 <style>.mobile-school summary::-webkit-details-marker{display:none}</style>
-<img layer-name="55 2" style="width:199.42px;height:222px;object-fit:contain;position:absolute;left:-17.21px;top:332px" src="/blk/figma-mobile/mobile-reviews-glass.png" alt="" />
+<img layer-name="55 2" style="width:199.42px;height:222px;object-fit:contain;position:absolute;left:-17.21px;top:332px" src="/blk/figma-mobile/mobile-reviews-glass.webp" alt="" />
 <div layer-name="Отзывы" style="color:#FFF;font-family:Coolvetica;font-size:27.091px;font-weight:400;line-height:86%;text-transform:uppercase;position:absolute;left:20px;top:49px;width:98px;height:23px;white-space:nowrap"><span style="font-family:Coolvetica, -apple-system, Roboto, Helvetica, sans-serif;font-weight:400;font-size:27.091px;color:#FFF">Отзывы</span></div>
 
 ${card(

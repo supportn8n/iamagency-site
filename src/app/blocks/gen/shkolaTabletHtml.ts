@@ -10,7 +10,7 @@ const row = (top: number, num: string, title: string, titleW: number) => `
 </div>`;
 
 export const shkolaTabletHtml = `<div style="position:absolute;left:0;top:0;width:768px;height:669px;background:#1C1C1C;overflow:visible">
-<img layer-name="55 3" style="width:1215.4px;height:756.36px;position:absolute;left:-423px;top:-459px;object-fit:contain" src="/blk/otzyvy/glass_tablet.png" alt="" />
+<img layer-name="55 3" style="width:1215.4px;height:756.36px;position:absolute;left:-423px;top:-459px;object-fit:contain" src="/blk/otzyvy/glass_tablet.webp" alt="" />
 <div layer-name="обучение профессии с нуля" style="color:#9A9895;font-family:Coolvetica;font-size:36px;font-weight:400;line-height:100%;text-transform:uppercase;position:absolute;left:242px;top:84px;width:486px;height:36px;white-space:nowrap"><span style="font-family:Coolvetica, -apple-system, Roboto, Helvetica, sans-serif;font-weight:400;font-size:36px;color:#9A9895">обучение профессии с нуля</span></div>
 <div layer-name="школа SMM" style="color:#FFF;text-align:justify;font-family:Inter;font-size:20px;font-weight:400;line-height:86%;letter-spacing:-1px;text-transform:lowercase;position:absolute;left:624px;top:133px;width:105px;height:17px;white-space:nowrap"><span style="font-family:Inter, -apple-system, Roboto, Helvetica, sans-serif;font-weight:400;font-size:20px;color:#FFF">школа SMM</span></div>
 ${row(247, "01", "почему наш курс лучший на рынке", 596)}

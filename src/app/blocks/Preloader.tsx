@@ -26,7 +26,7 @@ export default function Preloader() {
     window.addEventListener("load", onLoad);
 
     const start = performance.now();
-    const minShow = 1600;
+    const minShow = 450;
     let p = 0;
     let raf = 0;
 
@@ -34,18 +34,18 @@ export default function Preloader() {
       const elapsed = now - start;
       // надёжно ловим готовность: событие load могло пройти мимо слушателя,
       // поэтому проверяем readyState, плюс страховка по времени — не зависаем
-      if (document.readyState === "complete" || elapsed > 3000) loaded = true;
+      if (document.readyState === "complete" || elapsed > 1200) loaded = true;
       const target = loaded ? 100 : 92;
-      p += (target - p) * 0.05;
+      p += (target - p) * (loaded ? 0.16 : 0.08);
 
       setParts(Math.min(3, Math.floor(elapsed / 170) + 1));
       setPct(Math.min(100, Math.round(p)));
 
-      if (p >= 99.4 && elapsed >= minShow) {
+      if (p >= 99 && elapsed >= minShow) {
         setParts(3);
         setPct(100);
         setHide(true);
-        setTimeout(() => setGone(true), 700);
+        setTimeout(() => setGone(true), 450);
         return;
       }
       raf = requestAnimationFrame(tick);
@@ -73,7 +73,7 @@ export default function Preloader() {
         alignItems: "center",
         justifyContent: "center",
         transform: hide ? "translateY(-100%)" : "none",
-        transition: "transform .7s cubic-bezier(.76,0,.24,1)",
+        transition: "transform .45s cubic-bezier(.76,0,.24,1)",
         pointerEvents: hide ? "none" : "auto",
       }}
     >

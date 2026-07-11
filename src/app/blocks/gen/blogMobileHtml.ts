@@ -25,12 +25,12 @@ const chip = (x: number, y: number, w: number, text: string, textW: number) => `
 
 export const blogMobileHtml = `<div style="position:absolute;left:0;top:0;width:375px;height:913px;background:#FFF;overflow:visible">
 <div layer-name="Блог" style="color:#1C1C1C;font-family:Coolvetica;font-size:27.091px;font-weight:400;line-height:86%;text-transform:uppercase;position:absolute;left:20px;top:49px;width:62px;height:23px;white-space:nowrap"><span style="font-family:Coolvetica, -apple-system, Roboto, Helvetica, sans-serif;font-weight:400;font-size:27.091px;color:#1C1C1C">Блог</span></div>
-${card(127, 251, "/blk/blog/0b713db08b53.png", "Что реально влияет на продажи в 2026<br/><br/>В 2026 продажи больше не зависят только от продукта. Сильный продукт...")}
-${card(20, 94, "/blk/blog/96fe8ff810d3.png", "Claude для бизнеса простым языком<br/><br/>ИИ перестаёт быть просто «чатом для вопросов». В 2026 году такие...")}
-${card(20, 408, "/blk/blog/e7fa50c7bae4.png", "Instagram больше не хочет, чтобы вы росли по старым правилам<br/><br/>За последние месяцы многие бизнесы начали...", 72)}
-${card(127, 565, "/blk/blog/f41a088987f8.png", "4 сервиса для создания визуала<br/><br/>Хороший визуал больше не требует сложного продакшена...")}
-<img layer-name="30Файл 1" style="width:183px;height:183px;object-fit:contain;position:absolute;left:278px;top:425px" src="/blk/blog/0b27b0cd1873.png" alt="" />
-<img layer-name="Abstract 3D Shapes TG@Jam_Mockup51 1" style="width:199.54px;height:199.54px;object-fit:contain;position:absolute;left:-74px;top:190px" src="/blk/blog/7e8e72962934.png" alt="" />
+${card(127, 251, "/blk/blog/0b713db08b53.webp", "Что реально влияет на продажи в 2026<br/><br/>В 2026 продажи больше не зависят только от продукта. Сильный продукт...")}
+${card(20, 94, "/blk/blog/96fe8ff810d3.webp", "Claude для бизнеса простым языком<br/><br/>ИИ перестаёт быть просто «чатом для вопросов». В 2026 году такие...")}
+${card(20, 408, "/blk/blog/e7fa50c7bae4.webp", "Instagram больше не хочет, чтобы вы росли по старым правилам<br/><br/>За последние месяцы многие бизнесы начали...", 72)}
+${card(127, 565, "/blk/blog/f41a088987f8.webp", "4 сервиса для создания визуала<br/><br/>Хороший визуал больше не требует сложного продакшена...")}
+<img layer-name="30Файл 1" style="width:183px;height:183px;object-fit:contain;position:absolute;left:278px;top:425px" src="/blk/blog/0b27b0cd1873.webp" alt="" />
+<img layer-name="Abstract 3D Shapes TG@Jam_Mockup51 1" style="width:199.54px;height:199.54px;object-fit:contain;position:absolute;left:-74px;top:190px" src="/blk/blog/7e8e72962934.webp" alt="" />
 <div layer-name="Категории" style="color:#9A9895;text-align:justify;font-family:Inter;font-size:13px;font-weight:400;line-height:86%;letter-spacing:-0.65px;text-transform:uppercase;position:absolute;left:20px;top:731px;width:75px;height:12px;white-space:nowrap"><span style="font-family:Inter, -apple-system, Roboto, Helvetica, sans-serif;font-weight:400;font-size:13px;color:#9A9895">Категории</span></div>
 ${chip(20, 763.83, 65.68, "смм", 35)}
 ${chip(20, 793.18, 113.94, "маркетинг", 83)}

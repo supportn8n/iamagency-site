@@ -28,7 +28,7 @@ ${social(20, "/blk/figma-mobile/mobile-social-telegram.png", "https://t.me/iam_s
 ${social(44.47, "/blk/figma-mobile/mobile-social-max.png", "https://max.ru/u/f9LHodD0cOKbELAJKi1eVN5Rai5cGNxNIP3VB781r1iMvNZdUyuic3sD9U8", "Max")}
 ${social(69.05, "/blk/figma-mobile/mobile-social-instagram.png", "https://www.instagram.com/iamagency.smm", "Instagram")}
 ${social(93.32, "/blk/figma-mobile/mobile-social-whatsapp.png", "https://wa.me/message/BPS3ETU5K3HZH1", "WhatsApp")}
-<img src="/blk/kontakty/blue_contact.png" style="position:absolute;left:113px;top:619px;width:376.65px;height:360.81px;object-fit:contain;pointer-events:none" alt="" />
+<img src="/blk/kontakty/blue_contact.webp" style="position:absolute;left:113px;top:619px;width:376.65px;height:360.81px;object-fit:contain;pointer-events:none" alt="" />
 <div id="kf-modal" style="position:absolute;left:20px;top:310px;width:335px;height:356px;display:none">
   <div style="position:absolute;left:0;top:0;width:335px;height:356px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.18);border-radius:12px"></div>
   <div style="position:absolute;left:25px;top:98px;width:285px;text-align:center;color:#C9C9D2;font-family:Inter,-apple-system,Roboto,Helvetica,sans-serif;font-size:45px;line-height:86%">Спасибо!</div>

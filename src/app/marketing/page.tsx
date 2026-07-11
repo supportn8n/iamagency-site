@@ -14,7 +14,7 @@ import { processHtml, processH } from "../blocks/gen/processHtml";
 import { sozdanieHtml } from "../blocks/gen/sozdanieHtml";
 import { qaHtml, qaH } from "../blocks/gen/qaHtml";
 import { skidkaHtml, skidkaH } from "../blocks/gen/skidkaHtml";
-import { futerHtml } from "../blocks/gen/futerHtml";
+import { futerHtml, futerH } from "../blocks/gen/futerHtml";
 
 /* Отдельная посадочная «Маркетинг» — открывается по кнопке «Узнать больше»
    с блока Маркетинг на главной. Здесь вся подробная инфа про направления. */
@@ -39,7 +39,7 @@ export default function MarketingPage() {
       {/* Q&A без Reveal: фигуры (слиток, airship) выходят за блок, blur бы их резал */}
       <BuilderBlock html={qaHtml} h={qaH} />
       <Reveal><SkidkaCountdown html={skidkaHtml} h={skidkaH} /></Reveal>
-      <Reveal><BuilderBlock html={futerHtml} /></Reveal>
+      <Reveal><BuilderBlock html={futerHtml} h={futerH} overflow="hidden" /></Reveal>
     </>
   );
 }

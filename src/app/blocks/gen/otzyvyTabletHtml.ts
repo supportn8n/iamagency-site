@@ -23,7 +23,7 @@ const card = (
 </div>`;
 
 export const otzyvyTabletHtml = `<div style="position:absolute;left:0;top:0;width:768px;height:660px;background:#1C1C1C;overflow:visible">
-<img layer-name="55 2" style="width:1215.4px;height:756.36px;position:absolute;left:-423px;top:201px;object-fit:contain" src="/blk/otzyvy/glass_tablet.png" alt="" />
+<img layer-name="55 2" style="width:1215.4px;height:756.36px;position:absolute;left:-423px;top:201px;object-fit:contain" src="/blk/otzyvy/glass_tablet.webp" alt="" />
 <a href="/#kontakty" style="display:flex;width:198.17px;height:34.72px;justify-content:center;align-items:center;border-radius:51.288px;border:1.331px solid #FFF;background:#FFF;position:absolute;left:530px;top:586px;text-decoration:none">
   <span style="font-family:Inter, -apple-system, Roboto, Helvetica, sans-serif;font-weight:400;font-size:21px;line-height:86%;letter-spacing:-1.038px;color:#1C1C1C;white-space:nowrap">Начать работу</span>
 </a>

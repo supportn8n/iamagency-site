@@ -17,7 +17,7 @@ export const kontaktyTabletHtml = `<div data-contact-variant="tablet" style="pos
 <img src="/blk/kontakty/wm_am.png" style="position:absolute;left:53.54px;top:67.88px;width:187.81px;height:93.02px;filter:drop-shadow(0 2.13px 2.13px rgba(0,0,0,.25))" alt="" />
 <img src="/blk/kontakty/wm_agency.png" style="position:absolute;left:277.88px;top:62px;width:484.09px;height:99.32px;filter:drop-shadow(0 2.13px 2.13px rgba(0,0,0,.25))" alt="I AM AGENCY" />
 <div style="position:absolute;left:40px;top:286px;width:311px;height:96px;color:#1C1C1C;font-family:Coolvetica,-apple-system,Roboto,Helvetica,sans-serif;font-size:55.4px;font-weight:400;line-height:86%;text-transform:uppercase">Свяжитесь <br/>с нами</div>
-<img src="/blk/kontakty/blue_contact.png" style="position:absolute;left:-47px;top:440px;width:576.63px;height:552.37px;object-fit:contain" alt="" />
+<img src="/blk/kontakty/blue_contact.webp" style="position:absolute;left:-47px;top:440px;width:576.63px;height:552.37px;object-fit:contain" alt="" />
 ${label(289, "Имя", 29)}
 ${line(337.08)}
 ${label(355.77, "Телефон", 56)}

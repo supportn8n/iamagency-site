@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 /* Универсальная обёртка для блоков из Builder.io (Figma→HTML).
    Нативный холст w×h (по умолчанию 1440×1024) масштабируется под ширину контейнера.
@@ -18,6 +18,10 @@ export default function BuilderBlock({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0);
+  const optimizedHtml = useMemo(
+    () => html.replace(/<img(?![^>]*\bloading=)/g, '<img loading="lazy" decoding="async"'),
+    [html]
+  );
 
   useEffect(() => {
     const el = ref.current;
@@ -42,7 +46,7 @@ export default function BuilderBlock({
           transform: `scale(${scale})`,
           visibility: scale ? "visible" : "hidden",
         }}
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html: optimizedHtml }}
       />
     </div>
   );
