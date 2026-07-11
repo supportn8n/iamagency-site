@@ -142,7 +142,7 @@ export default async function CasePage({
         {/* перелинковка */}
         <nav style={{ marginTop: 44, display: "flex", flexWrap: "wrap", gap: "12px 24px", fontSize: 16 }}>
           <Link href="/keisy" style={{ color: "#F55D1C", fontWeight: 600 }}>← Все кейсы</Link>
-          <Link href="/#uslugi" style={{ color: "#1C1C1C" }}>Услуги</Link>
+          <Link href="/uslugi" style={{ color: "#1C1C1C" }}>Услуги</Link>
           <Link href="/marketing" style={{ color: "#1C1C1C" }}>Маркетинг</Link>
           <Link href="/#kontakty" style={{ color: "#1C1C1C" }}>Оставить заявку</Link>
         </nav>
