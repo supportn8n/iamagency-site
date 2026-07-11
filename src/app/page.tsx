@@ -1,6 +1,7 @@
 import Partners from "./blocks/Partners";
 import BuilderBlock from "./blocks/BuilderBlock";
 import ResponsiveBlock from "./blocks/ResponsiveBlock";
+import ServicesAccordion from "./blocks/ServicesAccordion";
 import MarqueeBlock from "./blocks/MarqueeBlock";
 import ContactBlock from "./blocks/ContactBlock";
 import FloatChips from "./blocks/FloatChips";
@@ -71,7 +72,7 @@ export default function Home() {
         mobileH={utpMobileH}
       />
       <div id="uslugi">
-        <ResponsiveBlock
+        <ServicesAccordion
           desktopHtml={uslugiHtml}
           desktopH={uslugiH}
           tabletHtml={uslugiTabletHtml}

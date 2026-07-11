@@ -112,6 +112,120 @@ div[layer-name="🤵🏼‍♂️"] span {
   .rb-desktop { display: none; }
   .rb-tablet  { display: block; }
 }
+
+@media (max-width: 767px) {
+  .services-accordion-root {
+    padding-bottom: var(--services-mobile-extra, 0px);
+    transition: padding-bottom 0.25s ease;
+  }
+}
+
+.services-accordion-root {
+  position: relative;
+  container-type: inline-size;
+  background: #1c1c1c;
+}
+
+.services-live-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.services-live-list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35cqw;
+  background: #1c1c1c;
+  pointer-events: auto;
+}
+
+.services-live-list-desktop {
+  left: 2.57cqw;
+  top: 13.06cqw;
+  width: 97.43cqw;
+}
+
+.services-live-list-tablet {
+  left: 2.47cqw;
+  top: 32.29cqw;
+  width: 95.05cqw;
+}
+
+.services-live-list-mobile {
+  left: 3.47cqw;
+  top: 30.4cqw;
+  width: 96.53cqw;
+  gap: 0.27cqw;
+}
+
+.services-live-row {
+  overflow: hidden;
+  border: 1px solid #9a9895;
+  background: #1c1c1c;
+  color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.services-live-row.is-open {
+  border-color: #cee3a7;
+}
+
+.services-live-toggle {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  background: #1c1c1c;
+  color: #fff;
+  font-family: Inter, sans-serif;
+  line-height: 0.86;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.services-live-number { color: #9a9895; }
+.services-live-icon { color: #cee3a7; font-weight: 300; text-align: center; }
+
+.services-live-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.25s ease, opacity 0.2s ease;
+}
+
+.services-live-panel > div { min-height: 0; overflow: hidden; }
+.services-live-row.is-open .services-live-panel { grid-template-rows: 1fr; opacity: 1; }
+.services-live-panel p { margin: 0; color: #fff; font-family: Inter, sans-serif; line-height: 1.15; }
+.services-live-panel a { display: block; width: max-content; margin-left: auto; color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+
+.services-live-list-desktop .services-live-row { border-width: 2px; border-radius: 2.92cqw; }
+.services-live-list-desktop .services-live-toggle { min-height: 5.49cqw; gap: 2.43cqw; padding: 0 3.89cqw; font-size: 3.87cqw; letter-spacing: -0.19cqw; }
+.services-live-list-desktop .services-live-icon { width: 3cqw; font-size: 3.5cqw; }
+.services-live-list-desktop .services-live-panel > div { padding: 0.65cqw 4.5cqw 1.3cqw 10.35cqw; }
+.services-live-list-desktop .services-live-panel p,
+.services-live-list-desktop .services-live-panel a { font-size: 1.25cqw; }
+.services-live-list-desktop .services-live-panel a { margin-top: 0.55cqw; }
+
+.services-live-list-tablet .services-live-row { border-width: 1.2px; border-radius: 3.13cqw; }
+.services-live-list-tablet .services-live-toggle { min-height: 7.55cqw; gap: 2.6cqw; padding: 0 4.82cqw; font-size: 4.17cqw; letter-spacing: -0.21cqw; }
+.services-live-list-tablet .services-live-icon { width: 3.7cqw; font-size: 4cqw; }
+.services-live-list-tablet .services-live-panel > div { padding: 0.8cqw 3cqw 1.6cqw 13cqw; }
+.services-live-list-tablet .services-live-panel p,
+.services-live-list-tablet .services-live-panel a { font-size: 1.56cqw; }
+.services-live-list-tablet .services-live-panel a { margin-top: 0.8cqw; }
+
+.services-live-list-mobile .services-live-row { border-width: 0.6px; border-radius: 3.2cqw; }
+.services-live-list-mobile .services-live-toggle { min-height: 8.27cqw; gap: 2.13cqw; padding: 0 3.47cqw; font-size: 5.31cqw; letter-spacing: -0.27cqw; white-space: nowrap; }
+.services-live-list-mobile .services-live-icon { width: 4.3cqw; font-size: 5.2cqw; }
+.services-live-list-mobile .services-live-panel > div { padding: 0.8cqw 3.47cqw 2.67cqw 10.93cqw; }
+.services-live-list-mobile .services-live-panel p,
+.services-live-list-mobile .services-live-panel a { font-size: 2.13cqw; }
+.services-live-list-mobile .services-live-panel a { margin-top: 1.6cqw; }
 @media (max-width: 767px) {
   .rb-tablet.rb-has-mobile { display: none; }
   .rb-mobile { display: block; }
