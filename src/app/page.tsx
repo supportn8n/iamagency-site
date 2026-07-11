@@ -40,6 +40,7 @@ import { kontaktyTabletHtml, kontaktyTabletH } from "./blocks/gen/kontaktyTablet
 import { kontaktyMobileHtml, kontaktyMobileH } from "./blocks/gen/kontaktyMobileHtml";
 import { futerHtml, futerH } from "./blocks/gen/futerHtml";
 import { futerTabletHtml, futerTabletH } from "./blocks/gen/futerTabletHtml";
+import { futerMobileHtml, futerMobileH } from "./blocks/gen/futerMobileHtml";
 import { caseLinks } from "./case/cases";
 
 /* Главная 1:1 из экспортов Builder.io. Между Hero и УТП — лента Партнёров.
@@ -157,7 +158,14 @@ export default function Home() {
           mobileH={kontaktyMobileH}
         />
       </div>
-      <ResponsiveBlock desktopHtml={futerHtml} desktopH={futerH} tabletHtml={futerTabletHtml} tabletH={futerTabletH} />
+      <ResponsiveBlock
+        desktopHtml={futerHtml}
+        desktopH={futerH}
+        tabletHtml={futerTabletHtml}
+        tabletH={futerTabletH}
+        mobileHtml={futerMobileHtml}
+        mobileH={futerMobileH}
+      />
     </>
   );
 }
