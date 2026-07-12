@@ -13,7 +13,7 @@ const TREE: { title: string; href: string; children?: { title: string; href: str
     title: "Главная",
     href: "/",
     children: [
-      { title: "Услуги", href: "/uslugi" },
+      { title: "Услуги", href: "/#uslugi" },
       { title: "Брендбук и SMM-стратегия", href: "/uslugi/brendbuk-i-smm-strategiya" },
       { title: "Ведение соцсетей", href: "/uslugi/vedenie-sotssetey" },
       { title: "Маркетинг и продвижение", href: "/uslugi/marketing-i-prodvizhenie" },

@@ -141,7 +141,7 @@ export default function ShkolaSmmPage() {
         <nav style={{ marginTop: 44, display: "flex", flexWrap: "wrap", gap: "12px 24px", fontSize: 16 }}>
           <Link href="/#kontakty" style={{ color: "#F55D1C", fontWeight: 600 }}>Записаться</Link>
           <Link href="/keisy" style={{ color: "#1C1C1C" }}>Кейсы</Link>
-          <Link href="/uslugi" style={{ color: "#1C1C1C" }}>Услуги</Link>
+          <Link href="/#uslugi" style={{ color: "#1C1C1C" }}>Услуги</Link>
         </nav>
       </section>
 

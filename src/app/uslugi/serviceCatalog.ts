@@ -37,7 +37,7 @@ export const SERVICE_CATALOG: ServiceCatalogItem[] = [
     id: "sozdanie-saitov",
     title: "Создание сайтов",
     text: "Разрабатываем корпоративные сайты, лендинги и интернет-магазины: от структуры и прототипа до дизайна, вёрстки и запуска.",
-    href: "/marketing",
+    href: "/marketing/razrabotka-saytov",
     linkLabel: "Смотреть направление",
   },
   {

@@ -5,6 +5,7 @@ import FooterLinks from "./blocks/FooterLinks";
 import FloatFigures from "./blocks/FloatFigures";
 import Preloader from "./blocks/Preloader";
 import Header from "./blocks/Header";
+import ServicesDropdown from "./blocks/ServicesDropdown";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://iamagency.su"),
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body>
         <Preloader />
         <Header />
+        <ServicesDropdown />
         <div className="site-shell">{children}</div>
         <SocialLinks />
         <FooterLinks />

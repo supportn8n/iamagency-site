@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
    Масштабируется как страница (clientWidth/1440), поэтому при скролле выглядит
    один-в-один с верхним меню. На главной вверху прячется (родное меню видно). */
 const LINKS = [
-  { label: "УСЛУГИ", href: "/uslugi", left: 313 },
+  { label: "УСЛУГИ", href: "/#uslugi", left: 313 },
   { label: "ПОРТФОЛИО", href: "/keisy", left: 483 },
   { label: "МАРКЕТИНГ", href: "/marketing", left: 698 },
   { label: "ШКОЛА SMM", href: "/shkola-smm", left: 905 },
@@ -47,8 +47,10 @@ export default function Header() {
 
   useEffect(() => {
     const updateLegacyServiceLinks = () => {
-      document.querySelectorAll<HTMLAnchorElement>('a[href="/#uslugi"]').forEach((link) => {
-        link.setAttribute("href", "/uslugi");
+      document.querySelectorAll<HTMLAnchorElement>('a[href="/uslugi"]').forEach((link) => {
+        if (link.textContent?.trim().toLocaleLowerCase("ru-RU") === "услуги") {
+          link.setAttribute("href", "/#uslugi");
+        }
       });
     };
     updateLegacyServiceLinks();

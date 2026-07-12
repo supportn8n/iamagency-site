@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 const MENU = [
-  { label: "Услуги", href: "/uslugi" },
+  { label: "Услуги", href: "/#uslugi" },
   { label: "Портфолио", href: "/#portfolio" },
   { label: "Маркетинг", href: "/marketing" },
   { label: "Школа SMM", href: "/#shkola" },
