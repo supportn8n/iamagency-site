@@ -4,7 +4,7 @@ import ResponsiveBlock from "../blocks/ResponsiveBlock";
 import { futerHtml, futerH } from "../blocks/gen/futerHtml";
 import { futerTabletHtml, futerTabletH } from "../blocks/gen/futerTabletHtml";
 import { futerMobileHtml, futerMobileH } from "../blocks/gen/futerMobileHtml";
-import { shkolaHtml, shkolaH } from "../shkola/gen/shkolaHtml";
+import { shkolaPageDesktopHtml, shkolaPageDesktopH } from "../shkola/gen/shkolaPageDesktopHtml";
 import { shkolaPageTabletHtml, shkolaPageTabletH } from "../shkola/gen/shkolaPageTabletHtml";
 import { shkolaPageMobileHtml, shkolaPageMobileH } from "../shkola/gen/shkolaPageMobileHtml";
 
@@ -82,8 +82,8 @@ export default function ShkolaSmmPage() {
     <>
       <div className="header-spacer" style={{ background: "#1C1C1C" }} />
       <ResponsiveBlock
-        desktopHtml={shkolaHtml}
-        desktopH={shkolaH}
+        desktopHtml={shkolaPageDesktopHtml}
+        desktopH={shkolaPageDesktopH}
         tabletHtml={shkolaPageTabletHtml}
         tabletH={shkolaPageTabletH}
         mobileHtml={shkolaPageMobileHtml}
