@@ -15,6 +15,12 @@ import { sozdanieHtml } from "../blocks/gen/sozdanieHtml";
 import { qaHtml, qaH } from "../blocks/gen/qaHtml";
 import { skidkaHtml, skidkaH } from "../blocks/gen/skidkaHtml";
 import { futerHtml, futerH } from "../blocks/gen/futerHtml";
+import MarketingLeadModal from "./MarketingLeadModal";
+
+const EXTRA_SITES = [
+  { title: "UPPERCUTS", subtitle: "музыкальная академия", mark: "UC", href: "https://uppercuts.academy/" },
+  { title: "PRIVATE TRAVEL", subtitle: "travel & concierge", mark: "PT", href: "https://private-travel-club.com/" },
+];
 
 /* Отдельная посадочная «Маркетинг» — открывается по кнопке «Узнать больше»
    с блока Маркетинг на главной. Здесь вся подробная инфа про направления. */
@@ -23,6 +29,7 @@ export default function MarketingPage() {
     <>
       {/* отступ под липкий хедер */}
       <div className="header-spacer" />
+      <MarketingLeadModal />
       {/* Hero «Маркетинг» — резиновый, на всю ширину, вписан в первый экран */}
       <HeroBlock leftHtml={marketingHeroLeftHtml} rightHtml={marketingHeroRightHtml} />
       <AppearBlock html={napravleniyaHtml} targets={["Класс"]} />
@@ -35,7 +42,7 @@ export default function MarketingPage() {
       {/* Процесс без Reveal: blur резал бы жгут на стыке с мем-блоком (одна фигура на два блока) */}
       <BuilderBlock html={processHtml} h={processH} />
       {/* секции ниже плавно появляются из размытия при входе в экран на 30% */}
-      <Reveal><MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} clipLeft={75} clipWidth={1290} /></Reveal>
+      <Reveal><MarqueeBlock html={sozdanieHtml} rowTop={660} rowHeight={192} clipLeft={75} clipWidth={1290} extraCards={EXTRA_SITES} /></Reveal>
       {/* Q&A без Reveal: фигуры (слиток, airship) выходят за блок, blur бы их резал */}
       <BuilderBlock html={qaHtml} h={qaH} />
       <Reveal><SkidkaCountdown html={skidkaHtml} h={skidkaH} /></Reveal>

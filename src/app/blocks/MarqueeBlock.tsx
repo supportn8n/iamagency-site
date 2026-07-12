@@ -14,6 +14,7 @@ type MarqueeCanvasProps = {
   clipWidth?: number;
   clipRadius?: number;
   clip?: boolean;
+  extraCards?: Array<{ title: string; subtitle: string; mark: string; href: string }>;
 };
 
 function MarqueeCanvas({
@@ -27,6 +28,7 @@ function MarqueeCanvas({
   clipWidth,
   clipRadius = 24,
   clip = false,
+  extraCards = [],
 }: MarqueeCanvasProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -45,6 +47,20 @@ function MarqueeCanvas({
       if (cards.length < 2) return;
       const canvas = cards[0].parentElement;
       if (!canvas) return;
+
+      let nextLeft = Math.max(...cards.map((card) => parseFloat(card.style.left || "0") + parseFloat(card.style.width || "0"))) + 5;
+      for (const item of extraCards) {
+        const card = document.createElement("a");
+        card.href = item.href;
+        card.target = "_blank";
+        card.rel = "noreferrer";
+        card.setAttribute("aria-label", `${item.title}: открыть сайт`);
+        card.style.cssText = `display:block;width:254px;height:192px;position:absolute;left:${nextLeft}px;top:${rowTop}px;border-radius:15.462px;background:#1C1C1C;box-shadow:0 1.995px 1.995px rgba(0,0,0,.25) inset;color:#fff;text-decoration:none`;
+        card.innerHTML = `<div style="position:absolute;left:89px;top:28px;width:76px;height:66px;border:2px solid #90BEE9;border-radius:50%;display:grid;place-items:center;color:#90BEE9;font:600 22px Inter,sans-serif">${item.mark}</div><div style="position:absolute;left:12px;right:12px;top:120px;text-align:center;color:#fff;font:400 30px/86% Coolvetica,Inter,sans-serif;text-transform:uppercase;white-space:nowrap">${item.title}</div><div style="position:absolute;left:12px;right:12px;top:151px;text-align:center;color:#9A9895;font:400 15px/1 Inter,sans-serif;white-space:nowrap">${item.subtitle}</div>`;
+        canvas.appendChild(card);
+        cards.push(card);
+        nextLeft += 259;
+      }
 
       let maxRight = 0;
       let minLeft = Infinity;
@@ -107,7 +123,7 @@ function MarqueeCanvas({
       clearTimeout(t);
       cleanup();
     };
-  }, [rowTop, rowHeight, speed, clip, clipLeft, clipWidth, clipRadius]);
+  }, [rowTop, rowHeight, speed, clip, clipLeft, clipWidth, clipRadius, extraCards]);
 
   return (
     <div ref={ref} style={{ overflow: "hidden" }}>
@@ -126,6 +142,7 @@ export default function MarqueeBlock({
   clipWidth,
   clipRadius = 24,
   clip = false,
+  extraCards = [],
   tabletHtml,
   tabletH,
   tabletRowTop,
@@ -159,6 +176,7 @@ export default function MarqueeBlock({
       clipWidth={clipWidth}
       clipRadius={clipRadius}
       clip={clip}
+      extraCards={extraCards}
     />
   );
 

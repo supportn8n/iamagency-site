@@ -1,0 +1,146 @@
+.floatingButton {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 90;
+  min-height: 52px;
+  padding: 12px 24px;
+  border: 2px solid #f55d1c;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f55d1c, #1c1c1c 76%);
+  color: #fff;
+  cursor: pointer;
+  font: 500 17px/1 Inter, sans-serif;
+}
+
+:global(.marketingConsultationHidden) {
+  display: none !important;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(28, 28, 28, 0.72);
+}
+
+.modal {
+  position: relative;
+  width: min(100%, 620px);
+  max-height: calc(100svh - 48px);
+  overflow-y: auto;
+  padding: clamp(32px, 6vw, 64px);
+  border-radius: 8px;
+  background: #fff;
+  color: #1c1c1c;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #1c1c1c;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.brand {
+  margin: 0 0 38px;
+  color: #90bee9;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.modal h2 {
+  margin: 0 0 44px;
+  font-family: Coolvetica, Inter, sans-serif;
+  font-size: clamp(54px, 8vw, 86px);
+  font-weight: 400;
+  line-height: 0.85;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.modal label {
+  display: block;
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+.modal input {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-bottom: 1px solid #9a9895;
+  border-radius: 0;
+  background: transparent;
+  color: #1c1c1c;
+  font: 18px/1.2 Inter, sans-serif;
+  outline: none;
+}
+
+.modal input:focus {
+  border-bottom-color: #8992e4;
+}
+
+.submit,
+.thanks button {
+  min-height: 44px;
+  margin-top: 36px;
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: #1c1c1c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.thanks {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.thanks p {
+  color: #90bee9;
+}
+
+.thanks h2 {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.thanks span {
+  max-width: 280px;
+}
+
+@media (max-width: 600px) {
+  .floatingButton {
+    right: 16px;
+    bottom: 16px;
+    min-height: 46px;
+    padding-inline: 18px;
+    font-size: 14px;
+  }
+
+  .backdrop {
+    padding: 12px;
+  }
+
+  .modal {
+    max-height: calc(100svh - 24px);
+    padding: 48px 24px 32px;
+  }
+}
