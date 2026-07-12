@@ -118,32 +118,21 @@ export default async function CasePage({
         </div>
 
         {c.faq?.length ? (
-          <>
-            <h2 className={styles.faqTitle}>
-              Частые вопросы
-            </h2>
-            <div>
-              {c.faq.map((f, i) => (
-                <details key={i} className={styles.faqItem}>
-                  <summary>
-                    {f.q}
-                  </summary>
-                  <p>
-                    {f.a}
-                  </p>
-                </details>
-              ))}
+          <div className={styles.faqBand}>
+            <div className={styles.faqInner}>
+              <p className={styles.faqKicker}>Вопросы и ответы</p>
+              <h2 className={styles.faqTitle}>Частые вопросы</h2>
+              <div className={styles.faqList}>
+                {c.faq.map((f, i) => (
+                  <details key={i} className={styles.faqItem}>
+                    <summary>{f.q}</summary>
+                    <p>{f.a}</p>
+                  </details>
+                ))}
+              </div>
             </div>
-          </>
+          </div>
         ) : null}
-
-        {/* перелинковка */}
-        <nav className={styles.related}>
-          <Link href="/keisy">← Все кейсы</Link>
-          <Link href="/uslugi">Услуги</Link>
-          <Link href="/marketing">Маркетинг</Link>
-          <Link href="/#kontakty">Оставить заявку</Link>
-        </nav>
       </section>
 
       <ResponsiveBlock
