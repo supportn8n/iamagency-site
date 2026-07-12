@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import BuilderBlock from "../../blocks/BuilderBlock";
+import ResponsiveBlock from "../../blocks/ResponsiveBlock";
 import { futerHtml, futerH } from "../../blocks/gen/futerHtml";
+import { futerTabletHtml, futerTabletH } from "../../blocks/gen/futerTabletHtml";
+import { futerMobileHtml, futerMobileH } from "../../blocks/gen/futerMobileHtml";
 import { CASES, getCase } from "../cases";
+import styles from "./case-page.module.css";
 
 /* Посадочная одного направления кейсов — /case/<slug>. Сверху холст 1:1 из Figma
    (с хлебной крошкой), ниже — SEO-блок (H1 + текст + FAQ + перелинковка) и футер.
@@ -50,6 +54,10 @@ export default async function CasePage({
   if (!c) notFound();
 
   const h1 = c.h1 || `Кейсы SMM: ${c.name}`;
+  const caseImages = Array.from(c.html.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)["']/gi))
+    .map((match) => match[1])
+    .filter((src, index, all) => src.startsWith("/blk/keisy/") && all.indexOf(src) === index)
+    .slice(0, 24);
 
   const jsonLd: Record<string, unknown>[] = [
     {
@@ -77,60 +85,50 @@ export default async function CasePage({
   return (
     <>
       <div className="header-spacer" style={{ background: "#FFFFFF" }} />
-      <BuilderBlock html={c.html} h={c.height} />
+      <div className={styles.desktopCanvas}>
+        <BuilderBlock html={c.html} h={c.height} />
+      </div>
+
+      <section className={styles.responsiveCanvas} aria-labelledby="case-responsive-title">
+        <div className={styles.responsiveInner}>
+          <nav className={styles.breadcrumbs} aria-label="Хлебные крошки">
+            <Link href="/">Главная</Link><span>→</span>
+            <Link href="/keisy">Кейсы</Link><span>→</span>
+            <span>{c.name}</span>
+          </nav>
+          <h1 id="case-responsive-title">{h1}</h1>
+          {c.intro?.[0] ? <p className={styles.lead}>{c.intro[0]}</p> : null}
+          {caseImages.length ? (
+            <div className={styles.gallery} aria-label={`Работы в направлении ${c.name}`}>
+              {caseImages.map((src, index) => (
+                <figure className={styles.galleryItem} key={src}>
+                  <img src={src} alt={`${c.name}: пример работы ${index + 1}`} loading="lazy" />
+                </figure>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      </section>
 
       {/* SEO-блок: заголовок, текст, FAQ, перелинковка */}
-      <section
-        style={{
-          maxWidth: 1000,
-          margin: "0 auto",
-          padding: "clamp(32px,5vw,72px) clamp(20px,5vw,40px)",
-          fontFamily: "Inter, sans-serif",
-          color: "#1C1C1C",
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "var(--font-display), Inter, sans-serif",
-            fontWeight: 400,
-            textTransform: "uppercase",
-            fontSize: "clamp(28px,5vw,56px)",
-            lineHeight: 1.0,
-            letterSpacing: "-.01em",
-            margin: "0 0 24px",
-          }}
-        >
-          {h1}
-        </h1>
-
-        {c.intro?.map((p, i) => (
-          <p key={i} style={{ fontSize: "clamp(16px,1.4vw,19px)", lineHeight: 1.5, margin: "0 0 16px", color: "#3a3a3a" }}>
-            {p}
-          </p>
-        ))}
+      <section className={styles.seo}>
+        <div className={styles.seoIntro}>
+          <h1>{h1}</h1>
+          {c.intro?.map((p, i) => <p key={i}>{p}</p>)}
+        </div>
 
         {c.faq?.length ? (
           <>
-            <h2 style={{ fontSize: "clamp(22px,3vw,34px)", fontWeight: 700, margin: "40px 0 20px" }}>
+            <h2 className={styles.faqTitle}>
               Частые вопросы
             </h2>
             <div>
               {c.faq.map((f, i) => (
-                <details
-                  key={i}
-                  style={{ borderTop: "1px solid #e5e3e0", padding: "16px 0" }}
-                >
-                  <summary
-                    style={{
-                      cursor: "pointer",
-                      listStyle: "none",
-                      fontSize: "clamp(17px,1.6vw,21px)",
-                      fontWeight: 600,
-                    }}
-                  >
+                <details key={i} className={styles.faqItem}>
+                  <summary>
                     {f.q}
                   </summary>
-                  <p style={{ margin: "12px 0 0", fontSize: "clamp(15px,1.3vw,18px)", lineHeight: 1.55, color: "#3a3a3a" }}>
+                  <p>
                     {f.a}
                   </p>
                 </details>
@@ -140,15 +138,22 @@ export default async function CasePage({
         ) : null}
 
         {/* перелинковка */}
-        <nav style={{ marginTop: 44, display: "flex", flexWrap: "wrap", gap: "12px 24px", fontSize: 16 }}>
-          <Link href="/keisy" style={{ color: "#F55D1C", fontWeight: 600 }}>← Все кейсы</Link>
-          <Link href="/uslugi" style={{ color: "#1C1C1C" }}>Услуги</Link>
-          <Link href="/marketing" style={{ color: "#1C1C1C" }}>Маркетинг</Link>
-          <Link href="/#kontakty" style={{ color: "#1C1C1C" }}>Оставить заявку</Link>
+        <nav className={styles.related}>
+          <Link href="/keisy">← Все кейсы</Link>
+          <Link href="/uslugi">Услуги</Link>
+          <Link href="/marketing">Маркетинг</Link>
+          <Link href="/#kontakty">Оставить заявку</Link>
         </nav>
       </section>
 
-      <BuilderBlock html={futerHtml} h={futerH} />
+      <ResponsiveBlock
+        desktopHtml={futerHtml}
+        desktopH={futerH}
+        tabletHtml={futerTabletHtml}
+        tabletH={futerTabletH}
+        mobileHtml={futerMobileHtml}
+        mobileH={futerMobileH}
+      />
 
       <script
         type="application/ld+json"
