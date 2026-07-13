@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, KeyboardEvent as ReactKeyboardEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, KeyboardEvent as ReactKeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import styles from "./lead-modal.module.css";
 
@@ -22,6 +22,11 @@ const isLeadLabel = (value: string | null | undefined) => {
     /^получить скидку$/,
     /^заказать (?:услугу|консультацию|продвижение)$/,
   ].some((pattern) => pattern.test(text));
+};
+
+const isCourseLeadLabel = (value: string | null | undefined, pathname: string) => {
+  const text = normalizeText(value);
+  return text.includes("обучение") || (pathname === "/shkola-smm" && text === "записаться");
 };
 
 function resolveLeadTrigger(start: HTMLElement | null) {
@@ -54,16 +59,18 @@ export default function LeadModal() {
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [source, setSource] = useState("Оставить заявку");
+  const [kind, setKind] = useState<"business" | "course">("business");
   const modalRef = useRef<HTMLElement>(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
-  const openModal = (label: string) => {
+  const openModal = useCallback((label: string) => {
     previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     setSource(label);
+    setKind(isCourseLeadLabel(label, pathname) ? "course" : "business");
     setSent(false);
     setOpen(true);
-  };
+  }, [pathname]);
 
   const closeModal = () => {
     setOpen(false);
@@ -130,7 +137,7 @@ export default function LeadModal() {
       document.removeEventListener("click", onClick, true);
       document.removeEventListener("keydown", onKeyDown, true);
     };
-  }, [pathname]);
+  }, [openModal, pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -147,7 +154,7 @@ export default function LeadModal() {
       }
       if (event.key !== "Tab" || !modalRef.current) return;
 
-      const focusable = [...modalRef.current.querySelectorAll<HTMLElement>("a[href],button,input")].filter(
+      const focusable = [...modalRef.current.querySelectorAll<HTMLElement>("a[href],button,input,select,textarea")].filter(
         (element) => !element.hasAttribute("disabled") && element.offsetParent !== null,
       );
       if (!focusable.length) return;
@@ -177,6 +184,7 @@ export default function LeadModal() {
   };
 
   const stopControlPropagation = (event: ReactKeyboardEvent<HTMLElement>) => event.stopPropagation();
+  const isCourse = kind === "course";
 
   return (
     <>
@@ -194,7 +202,7 @@ export default function LeadModal() {
         >
           <section
             ref={modalRef}
-            className={styles.modal}
+            className={`${styles.modal} ${isCourse ? styles.courseModal : ""}`}
             role="dialog"
             aria-modal="true"
             aria-labelledby="lead-form-title"
@@ -206,11 +214,45 @@ export default function LeadModal() {
 
             {sent ? (
               <div className={styles.thanks} aria-live="polite">
-                <p>I AM AGENCY</p>
+                <p>{isCourse ? "ШКОЛА SMM · I AM AGENCY" : "I AM AGENCY"}</p>
                 <h2 id="lead-form-title">Спасибо!</h2>
-                <span>Мы свяжемся с вами в течение 15 минут</span>
+                <span>
+                  {isCourse
+                    ? "Мы свяжемся с вами и расскажем о ближайшем потоке курса"
+                    : "Мы свяжемся с вами в течение 15 минут"}
+                </span>
                 <button type="button" onClick={closeModal}>Закрыть</button>
               </div>
+            ) : isCourse ? (
+              <form onSubmit={submit}>
+                <p className={styles.brand}>ШКОЛА SMM · I AM AGENCY</p>
+                <p className={styles.source}>Заявка на обучение</p>
+                <h2 id="lead-form-title">Записаться<br />на курс</h2>
+                <label>Имя<input ref={nameRef} name="name" autoComplete="name" required /></label>
+                <label>Телефон<input name="phone" type="tel" autoComplete="tel" required /></label>
+                <label>Telegram / соцсеть<input name="contact" autoComplete="url" /></label>
+                <label>
+                  Ваш уровень в SMM
+                  <select name="experience" defaultValue="" required>
+                    <option value="" disabled>Выберите вариант</option>
+                    <option value="beginner">Начинаю с нуля</option>
+                    <option value="basic">Есть базовый опыт</option>
+                    <option value="specialist">Уже работаю в SMM</option>
+                    <option value="business">Развиваю свой бизнес</option>
+                  </select>
+                </label>
+                <label>
+                  Что хотите получить от обучения?
+                  <textarea name="goal" rows={2} />
+                </label>
+                <label className={styles.consent}>
+                  <input name="consent" type="checkbox" required />
+                  <span>
+                    Я согласен с <a href="/privacy-consent" target="_blank">обработкой персональных данных</a>
+                  </span>
+                </label>
+                <button className={styles.submit} type="submit">Записаться на курс</button>
+              </form>
             ) : (
               <form onSubmit={submit}>
                 <p className={styles.brand}>I AM AGENCY</p>

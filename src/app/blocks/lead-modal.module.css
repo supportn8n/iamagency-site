@@ -42,6 +42,21 @@
   animation: modalIn 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
+.courseModal {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(90deg, #8992e4, #f55d1c) border-box;
+}
+
+.courseModal .brand {
+  color: #8992e4;
+}
+
+.courseModal h2 {
+  font-size: clamp(50px, 7vw, 76px);
+}
+
 .close {
   position: absolute;
   top: 16px;
@@ -94,7 +109,9 @@
   font-size: 13px;
 }
 
-.modal input {
+.modal input,
+.modal select,
+.modal textarea {
   display: block;
   width: 100%;
   min-height: 42px;
@@ -107,7 +124,20 @@
   outline: none;
 }
 
-.modal input:focus {
+.modal select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.modal textarea {
+  min-height: 58px;
+  padding-top: 10px;
+  resize: vertical;
+}
+
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
   border-bottom-color: #8992e4;
 }
 
@@ -150,6 +180,15 @@
 .thanks button:hover,
 .thanks button:focus-visible {
   background: #8992e4;
+}
+
+.courseModal .submit {
+  background: linear-gradient(90deg, #8992e4, #f55d1c);
+}
+
+.courseModal .submit:hover,
+.courseModal .submit:focus-visible {
+  background: linear-gradient(90deg, #7480e0, #eb4f12);
 }
 
 .thanks {
@@ -205,6 +244,37 @@
 
   .modal h2 {
     font-size: 52px;
+  }
+
+  .courseModal h2 {
+    margin-bottom: 24px;
+    font-size: 44px;
+  }
+
+  .courseModal .source {
+    margin-bottom: 20px;
+  }
+
+  .courseModal label {
+    margin-top: 14px;
+  }
+
+  .courseModal input,
+  .courseModal select {
+    min-height: 34px;
+  }
+
+  .courseModal textarea {
+    min-height: 44px;
+    padding-top: 6px;
+  }
+
+  .courseModal .consent {
+    margin-top: 16px;
+  }
+
+  .courseModal .submit {
+    margin-top: 20px;
   }
 }
 
