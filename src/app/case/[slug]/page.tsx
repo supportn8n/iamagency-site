@@ -102,7 +102,11 @@ export default async function CasePage({
             <div className={styles.gallery} aria-label={`Работы в направлении ${c.name}`}>
               {caseImages.map((src, index) => (
                 <figure className={styles.galleryItem} key={src}>
-                  <img src={src} alt={`${c.name}: пример работы ${index + 1}`} loading="lazy" />
+                  <img
+                    src={src}
+                    alt={`SMM-кейс I AM AGENCY в нише ${c.name}: пример визуала и контента ${index + 1}`}
+                    loading="lazy"
+                  />
                 </figure>
               ))}
             </div>

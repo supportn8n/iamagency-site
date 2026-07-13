@@ -1,3 +1,5 @@
+import { enrichImageAlts } from "./imageAlt";
+
 /* Универсальная обёртка для блоков из Builder.io (Figma→HTML).
    Нативный холст w×h (по умолчанию 1440×1024) масштабируется под ширину контейнера.
    Для планшета передаём w=768, для мобайла w=375. */
@@ -12,7 +14,7 @@ export default function BuilderBlock({
   h?: number;
   overflow?: "hidden" | "visible";
 }) {
-  const optimizedHtml = html.replace(
+  const optimizedHtml = enrichImageAlts(html).replace(
     /<img(?![^>]*\bloading=)/g,
     '<img loading="lazy" decoding="async"'
   );
