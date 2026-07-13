@@ -16,7 +16,6 @@ import { sozdanieHtml } from "../blocks/gen/sozdanieHtml";
 import { qaHtml, qaH } from "../blocks/gen/qaHtml";
 import { skidkaHtml, skidkaH } from "../blocks/gen/skidkaHtml";
 import { futerHtml, futerH } from "../blocks/gen/futerHtml";
-import MarketingLeadModal from "./MarketingLeadModal";
 
 export const metadata: Metadata = {
   title: { absolute: "Маркетинговое агентство полного цикла | I AM AGENCY" },
@@ -38,7 +37,6 @@ export default function MarketingPage() {
       <h1 className="sr-only">Маркетинговое агентство полного цикла</h1>
       {/* отступ под липкий хедер */}
       <div className="header-spacer" />
-      <MarketingLeadModal />
       {/* Hero «Маркетинг» — резиновый, на всю ширину, вписан в первый экран */}
       <HeroBlock leftHtml={marketingHeroLeftHtml} rightHtml={marketingHeroRightHtml} />
       <AppearBlock html={napravleniyaHtml} targets={["Класс"]} />
