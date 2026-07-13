@@ -1,5 +1,20 @@
-const base = "http://localhost:3010";
-const xml = await (await fetch(`${base}/sitemap.xml`)).text();
+const base = (process.argv[2] || "http://localhost:3010").replace(/\/$/, "");
+const checkSources = !process.argv.includes("--skip-image-check");
+
+async function fetchWithRetry(url, attempts = 4) {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      return await fetch(url);
+    } catch (error) {
+      lastError = error;
+      await new Promise((resolve) => setTimeout(resolve, attempt * 250));
+    }
+  }
+  throw lastError;
+}
+
+const xml = await (await fetchWithRetry(`${base}/sitemap.xml`)).text();
 const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) =>
   match[1].replace(/^https?:\/\/[^/]+/, base),
 );
@@ -12,7 +27,7 @@ let old = 0;
 const sources = new Set();
 
 for (const url of urls) {
-  const response = await fetch(url);
+  const response = await fetchWithRetry(url);
   if (!response.ok) throw new Error(`${response.status} ${url}`);
   const html = await response.text();
 
@@ -32,17 +47,19 @@ for (const url of urls) {
 
 const sourceUrls = [...sources];
 const failures = [];
-for (let index = 0; index < sourceUrls.length; index += 12) {
-  await Promise.all(
-    sourceUrls.slice(index, index + 12).map(async (url) => {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) failures.push(`${response.status} ${url}`);
-      } catch {
-        failures.push(`ERR ${url}`);
-      }
-    }),
-  );
+if (checkSources) {
+  for (let index = 0; index < sourceUrls.length; index += 12) {
+    await Promise.all(
+      sourceUrls.slice(index, index + 12).map(async (url) => {
+        try {
+          const response = await fetchWithRetry(url);
+          if (!response.ok) failures.push(`${response.status} ${url}`);
+        } catch {
+          failures.push(`ERR ${url}`);
+        }
+      }),
+    );
+  }
 }
 
 console.log(
@@ -56,7 +73,7 @@ console.log(
       genericLegacy: generic,
       oldCasePattern: old,
       uniqueSources: sourceUrls.length,
-      brokenSources: failures.length,
+      brokenSources: checkSources ? failures.length : "not checked",
       failures: failures.slice(0, 10),
     },
     null,
