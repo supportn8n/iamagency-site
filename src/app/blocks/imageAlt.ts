@@ -28,13 +28,13 @@ const AVATAR_ALTS: Record<string, string> = {
 };
 
 const STATIC_ALTS: Record<string, string> = {
-  "/partners/logos.png": "Клиенты I AM AGENCY: Сбер, ВТБ, MANUL, Villo, ESKQ Bar, ROOF и Dr. Reddy's",
+  "/partners/logos.webp": "Клиенты I AM AGENCY: Сбер, ВТБ, MANUL, Villo, ESKQ Bar, ROOF и Dr. Reddy's",
   "/blk/tarify/dvizhenie-panel.svg": "Тариф «Движение» на ведение социальных сетей",
   "/blk/tarify/proryv-panel.svg": "Тариф «Прорыв» на ведение и продвижение социальных сетей",
   "/blk/tarify/triumf-panel.svg": "Тариф «Триумф»: маркетинговая команда под ключ",
-  "/blk/kontakty/wm_agency.png": "Логотип SMM-агентства I AM AGENCY",
+  "/blk/kontakty/wm_agency.webp": "Логотип SMM-агентства I AM AGENCY",
   "/blk/figma-mobile/mobile-contact-logo.svg": "Логотип SMM-агентства I AM AGENCY",
-  "/blk/sozdanie/uppercuts-logo.png": "Логотип сайта Uppercuts Academy, разработанного I AM AGENCY",
+  "/blk/sozdanie/uppercuts-logo.webp": "Логотип сайта Uppercuts Academy, разработанного I AM AGENCY",
   "/blk/sozdanie/private-travel-logo.svg": "Логотип сайта Private Travel Club, разработанного I AM AGENCY",
 };
 

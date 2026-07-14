@@ -56,9 +56,14 @@ export default async function CasePage({
   const mobile = getCaseMobile(slug);
 
   const h1 = c.h1 || `Кейсы SMM: ${c.name}`;
-  const caseImages = Array.from(c.html.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)["']/gi))
-    .map((match) => match[1])
-    .filter((src, index, all) => src.startsWith("/blk/keisy/") && all.indexOf(src) === index)
+  const caseImages = Array.from(c.html.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi))
+    .map((match) => {
+      const tag = match[0];
+      const width = Number(tag.match(/(?:^|;)\s*width:\s*([\d.]+)px/i)?.[1] || 1);
+      const height = Number(tag.match(/(?:^|;)\s*height:\s*([\d.]+)px/i)?.[1] || 1);
+      return { src: match[1], width, height };
+    })
+    .filter((image, index, all) => image.src.startsWith("/blk/keisy/") && all.findIndex((item) => item.src === image.src) === index)
     .slice(0, 24);
 
   const jsonLd: Record<string, unknown>[] = [
@@ -113,10 +118,12 @@ export default async function CasePage({
           {c.intro?.[0] ? <p className={styles.lead}>{c.intro[0]}</p> : null}
           {caseImages.length ? (
             <div className={styles.gallery} aria-label={`Работы в направлении ${c.name}`}>
-              {caseImages.map((src, index) => (
-                <figure className={styles.galleryItem} key={src}>
+              {caseImages.map((image, index) => (
+                <figure className={styles.galleryItem} key={image.src}>
                   <img
-                    src={src}
+                    src={image.src}
+                    width={image.width}
+                    height={image.height}
                     alt={`SMM-кейс I AM AGENCY в нише ${c.name}: пример визуала и контента ${index + 1}`}
                     loading="lazy"
                   />

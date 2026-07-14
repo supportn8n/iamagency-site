@@ -32,10 +32,10 @@ export const futerMobileHtml = `<footer style="position:absolute;left:0;top:0;wi
 
   <div style="font:400 28px/.9 Coolvetica,Inter,sans-serif;text-transform:uppercase;margin:38px 0 16px"><span style="color:#9A9895">&gt;</span>&nbsp; Контакты</div>
   <div style="display:flex;gap:10px">
-    ${social("https://t.me/iam_smmagency", "Telegram", "/blk/figma-mobile/mobile-social-telegram.png")}
-    ${social("https://max.ru/u/f9LHodD0cOKbELAJKi1eVN5Rai5cGNxNIP3VB781r1iMvNZdUyuic3sD9U8", "Max", "/blk/figma-mobile/mobile-social-max.png")}
-    ${social("https://www.instagram.com/iamagency.smm", "Instagram", "/blk/figma-mobile/mobile-social-instagram.png")}
-    ${social("https://wa.me/message/BPS3ETU5K3HZH1", "WhatsApp", "/blk/figma-mobile/mobile-social-whatsapp.png")}
+    ${social("https://t.me/iam_smmagency", "Telegram", "/blk/figma-mobile/mobile-social-telegram.webp")}
+    ${social("https://max.ru/u/f9LHodD0cOKbELAJKi1eVN5Rai5cGNxNIP3VB781r1iMvNZdUyuic3sD9U8", "Max", "/blk/figma-mobile/mobile-social-max.webp")}
+    ${social("https://www.instagram.com/iamagency.smm", "Instagram", "/blk/figma-mobile/mobile-social-instagram.webp")}
+    ${social("https://wa.me/message/BPS3ETU5K3HZH1", "WhatsApp", "/blk/figma-mobile/mobile-social-whatsapp.webp")}
   </div>
 
   <div style="position:absolute;left:22px;right:22px;bottom:28px;padding-top:20px;border-top:1px solid #666;display:grid;grid-template-columns:1fr 1fr;gap:9px 16px;color:#9A9895;font:400 10px/1.25 Inter,sans-serif">

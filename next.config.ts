@@ -3,12 +3,27 @@ import path from "path";
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ["image/webp"],
+    minimumCacheTTL: 604800,
     remotePatterns: [
       {
         protocol: "https",
         hostname: "*.public.blob.vercel-storage.com",
       },
     ],
+  },
+  async headers() {
+    return [
+      {
+        source: "/:assetPath(blk|hero|partners|utp)/:file*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800",
+          },
+        ],
+      },
+    ];
   },
   turbopack: {
     root: path.resolve(__dirname),

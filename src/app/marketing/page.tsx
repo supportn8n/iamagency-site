@@ -31,7 +31,7 @@ const EXTRA_SITES = [
   {
     title: "UPPERCUTS",
     subtitle: "музыкальная академия",
-    logo: "/blk/sozdanie/uppercuts-logo.png",
+    logo: "/blk/sozdanie/uppercuts-logo.webp",
     href: "https://uppercuts.academy/",
   },
   {

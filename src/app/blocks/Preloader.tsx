@@ -7,9 +7,9 @@ import { useEffect, useState } from "react";
    Части проявляются по очереди (I, AM, AGENCY), под названием по центру бежит %.
    Доходит до 100% когда страница загрузилась, потом экран уезжает вверх. */
 const PARTS = [
-  { src: "/blk/kontakty/wm_i.png", left: 0, top: 5.91, w: 2.05, h: 94.09, alt: "" },
-  { src: "/blk/kontakty/wm_am.png", left: 6.29, top: 5.91, w: 24.88, h: 94.09, alt: "" },
-  { src: "/blk/kontakty/wm_agency.png", left: 35.97, top: 0, w: 64.1, h: 100, alt: "I AM AGENCY" },
+  { src: "/blk/kontakty/wm_i.webp", left: 0, top: 5.91, w: 2.05, h: 94.09, alt: "" },
+  { src: "/blk/kontakty/wm_am.webp", left: 6.29, top: 5.91, w: 24.88, h: 94.09, alt: "" },
+  { src: "/blk/kontakty/wm_agency.webp", left: 35.97, top: 0, w: 64.1, h: 100, alt: "I AM AGENCY" },
 ];
 
 export default function Preloader() {

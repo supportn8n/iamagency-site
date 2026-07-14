@@ -18,7 +18,9 @@ export default function Partners() {
             {[0, 1, 2, 3].map((i) => (
               <img
                 key={i}
-                src="/partners/logos.png"
+                src="/partners/logos.webp"
+                width={1440}
+                height={113}
                 alt={i === 0 ? "Партнёры: СБЕР, ВТБ, MANUL, Villo, ESKO BAR, ROOF, Dr.Reddy's и другие" : ""}
                 aria-hidden={i !== 0}
                 draggable={false}
