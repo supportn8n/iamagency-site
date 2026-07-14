@@ -41,4 +41,4 @@ KeywordTool MCP в активной конфигурации проекта не
 - [x] Production build без ошибок: 59/59 статических страниц собраны.
 - [x] `BUILD_ID` создан: `C_vZI6jrnrW_rtByiafCf`.
 - [x] `robots.txt`, `sitemap.xml`, canonical и JSON-LD проверены на собранной версии; sitemap содержит 45 URL.
-- [ ] Production Vercel обновлён и основные URL отвечают 200.
+- [ ] Production Vercel: коммит `353cfc9` отправлен в `main`, но домен возвращает `402 DEPLOYMENT_DISABLED`. Проект готов к автодеплою после восстановления Vercel-аккаунта.
