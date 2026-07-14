@@ -14,13 +14,17 @@ The Optimo shared-hosting plan is not used as the application runtime. Productio
 ## 1. Prepare Timeweb Cloud
 
 1. Open `timeweb.cloud` under the same owner account.
-2. Create a public S3 bucket, for example `iamagency-cms`, in region `ru-1`.
-3. Create S3 access keys with read/write access to this bucket.
-4. Create an App Platform application from the GitHub repository and branch `main`.
-5. Choose Next.js and enable SSR during creation. SSR cannot be enabled later for an existing static app.
-6. Use Node.js 22, build command `npm run build`, start command `npm start` and port `3000`.
-7. Set health check path to `/api/health`.
-8. Import variables from `.env.timeweb.example`, replacing every placeholder.
+2. In `API and Terraform`, create a scoped API token with read/write access to App Platform, S3, projects and domains.
+3. Store it in the user-level `TIMEWEB_CLOUD_TOKEN` environment variable and restart Codex.
+4. Run `npm run timeweb:preflight`. It only reads the account state and tariff list; it never creates or deletes resources and redacts credentials in its output.
+5. Create a public S3 bucket, for example `iamagency-cms`, in region `ru-1`.
+6. Create an App Platform application from the public repository `https://github.com/supportn8n/iamagency-site.git` and branch `main`.
+7. Choose Next.js and enable SSR during creation. SSR cannot be enabled later for an existing static app.
+8. Use Node.js 22, build command `npm run build`, start command `npm start` and port `3000`.
+9. Set health check path to `/api/health`.
+10. Import variables from `.env.timeweb.example`, replacing every placeholder.
+
+The official Timeweb Cloud MCP is configured separately in Codex and reads the same `TIMEWEB_CLOUD_TOKEN`. Resource creation is performed only after the preflight exposes the exact monthly App Platform and S3 prices.
 
 ## 2. Move CMS content
 
